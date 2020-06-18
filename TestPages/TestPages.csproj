@@ -112,7 +112,6 @@
       <LastGenOutput>MyWebPart.ascx.g.cs</LastGenOutput>
     </Content>
     <Content Include="WebPartPages\Elements.xml" />
-    <Content Include="WspImportProject3.sln" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
