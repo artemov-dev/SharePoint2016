@@ -57,7 +57,15 @@
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common.cs" />
+    <Compile Include="common.cs" />
+    <Compile Include="databases.cs" />
+    <Compile Include="WebPartPages\GetDatabase.aspx.cs">
+      <DependentUpon>GetDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPartPages\GetDatabase.aspx.designer.cs">
+      <DependentUpon>GetDatabase.aspx.cs</DependentUpon>
+    </Compile>
     <Compile Include="WebPartPages\MyPage1.aspx.cs">
       <DependentUpon>MyPage1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,6 +118,7 @@
     <Content Include="Features\Web Feature1\Web Feature1.Template.xml">
       <DependentUpon>Web Feature1.feature</DependentUpon>
     </Content>
+    <Content Include="WebPartPages\GetDatabase.aspx" />
     <Content Include="WebPartPages\PeopleEditor.aspx" />
     <Content Include="WebPartPages\MyPage1.aspx" />
     <Content Include="MyWebPart\Elements.xml" />
