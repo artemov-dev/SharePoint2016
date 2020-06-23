@@ -22,6 +22,6 @@
         ]]>
       </AllUsersWebPart>  
     </File>
-    <File Path="WebPartPages\FoldHyperLink.aspx" Url="WebPartPages/FoldHyperLink.aspx" IgnoreIfAlreadyExists="FALSE" ReplaceContent="TRUE" Type="GhostableInLibrary" />
+    <File Path="WebPartPages\PeopleEditor.aspx" Url="WebPartPages/PeopleEditor.aspx" IgnoreIfAlreadyExists="FALSE" ReplaceContent="TRUE" Type="GhostableInLibrary" />
   </Module>
 </Elements>

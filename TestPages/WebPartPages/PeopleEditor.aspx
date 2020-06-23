@@ -11,16 +11,7 @@
 </asp:Content>
 
 <asp:Content ID="Main" ContentPlaceHolderID="PlaceHolderMain" runat="server">
-    <SharePoint:FoldHyperLink runat="server"
-    LinkTitleWhenFoldClosed="Show details"
-    LinkTitleWhenFoldOpened="Hide details">
-    CustomClientClick="alert('State has been changed');">
-    <p>
-        SharePoint 2010 — это платформа для совместной работы, 
-        обеспечивающая увеличение производительности труда 
-        и управление контентом в знакомой среде Office. 
-    </p>
-</SharePoint:FoldHyperLink>
+    <SharePoint:PeopleEditor runat="server" />
 </asp:Content>
 
 <asp:Content ID="PageTitle" ContentPlaceHolderID="PlaceHolderPageTitle" runat="server">

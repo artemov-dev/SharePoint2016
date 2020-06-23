@@ -57,6 +57,7 @@
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.cs" />
     <Compile Include="WebPartPages\MyPage1.aspx.cs">
       <DependentUpon>MyPage1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -82,6 +83,9 @@
       <FeatureId>{a3a9e59c-bf9f-4559-83b8-719f36e8e01d}</FeatureId>
     </None>
     <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{225aa8dc-0193-4913-9a9a-e9337a69d05f}</SharePointProjectItemId>
+    </None>
     <None Include="MyWebPart\MyWebPart.webpart" />
     <None Include="MyWebPart\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{7e927444-05c0-4ef9-b9cb-d9535afecd30}</SharePointProjectItemId>
@@ -96,7 +100,9 @@
       <SharePointProjectItemId>{a52ccb5a-3f9e-423f-83cb-e14b97ce1e5a}</SharePointProjectItemId>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Layouts\TestPages\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Features\Site Feature1\Site Feature1.Template.xml">
       <DependentUpon>Site Feature1.feature</DependentUpon>
@@ -104,7 +110,7 @@
     <Content Include="Features\Web Feature1\Web Feature1.Template.xml">
       <DependentUpon>Web Feature1.feature</DependentUpon>
     </Content>
-    <Content Include="WebPartPages\FoldHyperLink.aspx" />
+    <Content Include="WebPartPages\PeopleEditor.aspx" />
     <Content Include="WebPartPages\MyPage1.aspx" />
     <Content Include="MyWebPart\Elements.xml" />
     <Content Include="MyWebPart\MyWebPart.ascx">

@@ -3,6 +3,6 @@
   <Files>
     <ProjectItemFile Source="Elements.xml" Target="WebPartPages\" Type="ElementManifest" />
     <ProjectItemFile Source="MyPage1.aspx" Target="WebPartPages\" Type="ElementFile" />
-    <ProjectItemFile Source="FoldHyperLink.aspx" Target="WebPartPages\" Type="ElementFile" />
+    <ProjectItemFile Source="PeopleEditor.aspx" Target="WebPartPages\" Type="ElementFile" />
   </Files>
 </ProjectItem>
