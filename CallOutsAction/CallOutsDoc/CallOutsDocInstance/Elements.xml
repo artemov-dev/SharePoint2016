@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="CallOutsDoc"
+                OnQuickLaunch="TRUE"
+                TemplateType="101"
+                Url="Lists/CallOutsDoc"
+                Description="My List Instance">
+
+
+    <Data>
+      <Rows>
+        <Row>
+          <Field Name='ContentTypeId'>0x0120</Field>
+          <Field Name='FSObjType'>1</Field>
+          <Field Name='Title'>Folder</Field>
+          <Field Name="FileLeafRef">Folder</Field>
+        </Row>
+        <Row>
+          <Field Name='ContentTypeId'>0x0120</Field>
+          <Field Name='FSObjType'>1</Field>
+          <Field Name='Title'>Folder1</Field>
+          <Field Name="FileLeafRef">Folder/Folder1</Field>          
+        </Row>
+        <Row>
+          <Field Name='ContentTypeId'>0x0120</Field>
+          <Field Name='FSObjType'>1</Field>
+          <Field Name='Title'>Folder2</Field>
+          <Field Name="FileLeafRef">Folder/Folder2</Field>
+        </Row>
+      </Rows>
+    </Data>
+    
+  </ListInstance>
+</Elements>

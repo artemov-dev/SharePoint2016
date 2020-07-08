@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="SiteAssets" List="101" Url="SiteAssets" >    
+    <File Path="SiteAssets\CallOuts\CallOutsDocCSR.js" Url="CallOuts/CallOutsDocCSR.js" Type="GhostableInLibrary" ReplaceContent="TRUE" />
+  </Module>
+</Elements>

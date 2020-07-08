@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D1A915DC-10E4-4129-866B-D07461C6A02C}</ProjectGuid>
+    <ProjectGuid>{FE6236FD-B8B8-4D37-8803-437FC736D16A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestPages</RootNamespace>
-    <AssemblyName>TestPages</AssemblyName>
+    <RootNamespace>CallOutsAction</RootNamespace>
+    <AssemblyName>CallOutsAction</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetOfficeVersion>16.0</TargetOfficeVersion>
     <FileAlignment>512</FileAlignment>
@@ -42,92 +42,59 @@
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.SharePoint" />
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="common.cs" />
-    <Compile Include="databases.cs" />
-    <Compile Include="WebPartPages\GetDatabase.aspx.cs">
-      <DependentUpon>GetDatabase.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebPartPages\GetDatabase.aspx.designer.cs">
-      <DependentUpon>GetDatabase.aspx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WebPartPages\MyPage1.aspx.cs">
-      <DependentUpon>MyPage1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebPartPages\MyPage1.aspx.designer.cs">
-      <DependentUpon>MyPage1.aspx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyWebPart\MyWebPart.ascx.g.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MyWebPart.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="MyWebPart\MyWebPart.ascx.cs">
-      <DependentUpon>MyWebPart.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\Site Feature1\Site Feature1.feature">
-      <FeatureId>{558fbc2a-458c-406f-9d0e-b3ca78d75459}</FeatureId>
+    <None Include="CallOutsDoc\CallOutsDocInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d0ab8f3d-c8c6-4da2-9b4a-cde64de16c3a}</SharePointProjectItemId>
     </None>
-    <None Include="Features\Web Feature1\Web Feature1.feature">
-      <FeatureId>{a3a9e59c-bf9f-4559-83b8-719f36e8e01d}</FeatureId>
+    <None Include="CallOutsDoc\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6e8a2c56-30e3-4c69-bbd6-fbd17110142c}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\SiteFeature\SiteFeature.feature">
+      <FeatureId>{8d06f7f9-a340-4b89-8697-5cf39f2a4d5e}</FeatureId>
+    </None>
+    <None Include="Features\WebFeature\WebFeature.feature">
+      <FeatureId>{a6f8d294-1db1-4ba9-96b3-e5deba92ee62}</FeatureId>
     </None>
     <None Include="key.snk" />
-    <None Include="Layouts\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{225aa8dc-0193-4913-9a9a-e9337a69d05f}</SharePointProjectItemId>
-    </None>
-    <None Include="MyWebPart\MyWebPart.webpart" />
-    <None Include="MyWebPart\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{7e927444-05c0-4ef9-b9cb-d9535afecd30}</SharePointProjectItemId>
-    </None>
     <None Include="Package\Package.package">
-      <PackageId>{0934dcfa-cc78-4657-b20c-1791b66cae28}</PackageId>
+      <PackageId>{1aedebaa-8948-4e2d-ab91-22ceb203339a}</PackageId>
     </None>
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
-    <None Include="WebPartPages\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{a52ccb5a-3f9e-423f-83cb-e14b97ce1e5a}</SharePointProjectItemId>
+    <None Include="SiteAssets\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3d5f75c3-15fa-4d0f-9262-259d2815b8ba}</SharePointProjectItemId>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Layouts\TestPages\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Features\Site Feature1\Site Feature1.Template.xml">
-      <DependentUpon>Site Feature1.feature</DependentUpon>
+    <Content Include="CallOutsDoc\CallOutsDocInstance\Elements.xml" />
+    <Content Include="CallOutsDoc\EditDlg.htm" />
+    <Content Include="CallOutsDoc\Elements.xml" />
+    <Content Include="CallOutsDoc\FileDlg.htm" />
+    <Content Include="CallOutsDoc\Repair.aspx" />
+    <Content Include="CallOutsDoc\Schema.xml" />
+    <Content Include="CallOutsDoc\Upload.aspx" />
+    <Content Include="Features\SiteFeature\SiteFeature.Template.xml">
+      <DependentUpon>SiteFeature.feature</DependentUpon>
     </Content>
-    <Content Include="Features\Web Feature1\Web Feature1.Template.xml">
-      <DependentUpon>Web Feature1.feature</DependentUpon>
+    <Content Include="Features\WebFeature\WebFeature.Template.xml">
+      <DependentUpon>WebFeature.feature</DependentUpon>
     </Content>
-    <Content Include="WebPartPages\GetDatabase.aspx" />
-    <Content Include="WebPartPages\PeopleEditor.aspx" />
-    <Content Include="WebPartPages\MyPage1.aspx" />
-    <Content Include="MyWebPart\Elements.xml" />
-    <Content Include="MyWebPart\MyWebPart.ascx">
-      <Generator>SharePointWebPartCodeGenerator</Generator>
-      <LastGenOutput>MyWebPart.ascx.g.cs</LastGenOutput>
-    </Content>
-    <Content Include="WebPartPages\Elements.xml" />
-    <Content Include="WebPartPages\XlstView.aspx" />
+    <Content Include="SiteAssets\CallOuts\CallOutsDocCSR.js" />
+    <Content Include="SiteAssets\Elements.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

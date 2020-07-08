@@ -24,5 +24,6 @@
     </File>
     <File Path="WebPartPages\PeopleEditor.aspx" Url="WebPartPages/PeopleEditor.aspx" IgnoreIfAlreadyExists="FALSE" ReplaceContent="TRUE" Type="GhostableInLibrary" />
     <File Path="WebPartPages\GetDatabase.aspx" Url="WebPartPages/GetDatabase.aspx" IgnoreIfAlreadyExists="FALSE" ReplaceContent="TRUE" Type="GhostableInLibrary" />
+    <File Path="WebPartPages\XlstView.aspx" Url="WebPartPages/XlstView.aspx" IgnoreIfAlreadyExists="FALSE" ReplaceContent="TRUE" Type="GhostableInLibrary" />
   </Module>
 </Elements>

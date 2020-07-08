@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="1aedebaa-8948-4e2d-ab91-22ceb203339a" solutionId="1aedebaa-8948-4e2d-ab91-22ceb203339a" resetWebServer="false" sharePointProductVersion="16.0" name="CallOutsAction" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="a6f8d294-1db1-4ba9-96b3-e5deba92ee62" />
+    <featureReference itemId="8d06f7f9-a340-4b89-8697-5cf39f2a4d5e" />
+  </features>
+</package>

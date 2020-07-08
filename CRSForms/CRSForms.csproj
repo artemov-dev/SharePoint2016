@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D1A915DC-10E4-4129-866B-D07461C6A02C}</ProjectGuid>
+    <ProjectGuid>{A0B526EF-2C50-4B78-A42A-C442CC929CFB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestPages</RootNamespace>
-    <AssemblyName>TestPages</AssemblyName>
+    <RootNamespace>CRSForms</RootNamespace>
+    <AssemblyName>CRSForms</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetOfficeVersion>16.0</TargetOfficeVersion>
     <FileAlignment>512</FileAlignment>
@@ -42,92 +42,53 @@
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.SharePoint" />
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="common.cs" />
-    <Compile Include="databases.cs" />
-    <Compile Include="WebPartPages\GetDatabase.aspx.cs">
-      <DependentUpon>GetDatabase.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebPartPages\GetDatabase.aspx.designer.cs">
-      <DependentUpon>GetDatabase.aspx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WebPartPages\MyPage1.aspx.cs">
-      <DependentUpon>MyPage1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebPartPages\MyPage1.aspx.designer.cs">
-      <DependentUpon>MyPage1.aspx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MyWebPart\MyWebPart.ascx.g.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MyWebPart.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="MyWebPart\MyWebPart.ascx.cs">
-      <DependentUpon>MyWebPart.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\Site Feature1\Site Feature1.feature">
-      <FeatureId>{558fbc2a-458c-406f-9d0e-b3ca78d75459}</FeatureId>
-    </None>
-    <None Include="Features\Web Feature1\Web Feature1.feature">
-      <FeatureId>{a3a9e59c-bf9f-4559-83b8-719f36e8e01d}</FeatureId>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{b8227ceb-ac46-4ce6-94e2-1c0fc4159801}</FeatureId>
     </None>
     <None Include="key.snk" />
-    <None Include="Layouts\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{225aa8dc-0193-4913-9a9a-e9337a69d05f}</SharePointProjectItemId>
+    <None Include="Lists\Announcements\AnnouncementsInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1fd9ef27-3476-449d-a27d-5901a33c1f0e}</SharePointProjectItemId>
     </None>
-    <None Include="MyWebPart\MyWebPart.webpart" />
-    <None Include="MyWebPart\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{7e927444-05c0-4ef9-b9cb-d9535afecd30}</SharePointProjectItemId>
+    <None Include="Lists\Announcements\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{22e99577-88cf-48d4-afcd-39b2f9c54053}</SharePointProjectItemId>
     </None>
     <None Include="Package\Package.package">
-      <PackageId>{0934dcfa-cc78-4657-b20c-1791b66cae28}</PackageId>
+      <PackageId>{37424ec0-650f-4276-a83a-bd1970ffcb3c}</PackageId>
     </None>
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
-    <None Include="WebPartPages\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{a52ccb5a-3f9e-423f-83cb-e14b97ce1e5a}</SharePointProjectItemId>
+    <None Include="Scripts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4f3bb77c-54f3-420a-b6b8-3731d6fce369}</SharePointProjectItemId>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Layouts\TestPages\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Features\Site Feature1\Site Feature1.Template.xml">
-      <DependentUpon>Site Feature1.feature</DependentUpon>
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
     </Content>
-    <Content Include="Features\Web Feature1\Web Feature1.Template.xml">
-      <DependentUpon>Web Feature1.feature</DependentUpon>
+    <Content Include="Lists\Announcements\AnnouncementsInstance\Elements.xml">
+      <SubType>Designer</SubType>
     </Content>
-    <Content Include="WebPartPages\GetDatabase.aspx" />
-    <Content Include="WebPartPages\PeopleEditor.aspx" />
-    <Content Include="WebPartPages\MyPage1.aspx" />
-    <Content Include="MyWebPart\Elements.xml" />
-    <Content Include="MyWebPart\MyWebPart.ascx">
-      <Generator>SharePointWebPartCodeGenerator</Generator>
-      <LastGenOutput>MyWebPart.ascx.g.cs</LastGenOutput>
+    <Content Include="Lists\Announcements\Elements.xml" />
+    <Content Include="Lists\Announcements\Schema.xml">
+      <SubType>Designer</SubType>
     </Content>
-    <Content Include="WebPartPages\Elements.xml" />
-    <Content Include="WebPartPages\XlstView.aspx" />
+    <Content Include="Scripts\AnnouncementsCSR.js" />
+    <Content Include="Scripts\Elements.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
