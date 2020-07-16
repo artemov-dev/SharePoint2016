@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="b1eb9573-2ec8-4791-b8dc-57c1b27aa313" solutionId="b1eb9573-2ec8-4791-b8dc-57c1b27aa313" resetWebServer="false" sharePointProductVersion="16.0" name="CMultiField" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <projectItems>
+    <projectItemReference itemId="33cf3015-570d-4e32-9431-b487de92d139" />
+    <projectItemReference itemId="d71bf6b0-628a-4f7c-a25e-9f7aeba2d309" />
+  </projectItems>
+</package>

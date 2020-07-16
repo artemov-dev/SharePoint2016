@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FieldTypes>
+  <FieldType>
+    <Field Name="TypeName">StateAddress</Field>
+    <Field Name="ParentType">MultiColumn</Field>
+    <Field Name="TypeDisplayName">CMultiField StateAddress</Field>
+    <Field Name="TypeShortDescription">CMultiField StateAddress</Field>
+    <Field Name="UserCreatable">TRUE</Field>
+    <Field Name="ShowOnListCreate">TRUE</Field>
+    <Field Name="ShowOnDocumentLibraryCreate">FALSE</Field>
+    <Field Name="ShowOnColumnTemplateCreate">TRUE</Field>
+    <Field Name="FieldTypeClass">CMultiField.StateAddress,$SharePoint.Project.AssemblyFullName$</Field>
+  </FieldType>
+</FieldTypes>
