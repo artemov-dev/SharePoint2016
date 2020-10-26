@@ -1,0 +1,3 @@
+﻿<%@ServiceHost Language="C#"
+    Service="CriticalPath.SharePoint.Samples.WingtipCalculator.CalcServiceApplication, $SharePoint.Project.AssemblyFullName$" 
+    Factory="CriticalPath.SharePoint.Samples.WingtipCalculator.CalcServiceHostFactory, $SharePoint.Project.AssemblyFullName$" %>

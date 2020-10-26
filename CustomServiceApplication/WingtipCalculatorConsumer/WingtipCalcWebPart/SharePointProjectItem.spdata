@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="WingtipCalcWebPartUserControl.ascx" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="WingtipCalcWebPart\" Type="ElementManifest" />
+    <ProjectItemFile Source="WingtipCalcWebPart.webpart" Target="WingtipCalcWebPart\" Type="ElementFile" />
+    <ProjectItemFile Source="WingtipCalcWebPartUserControl.ascx" Target="CONTROLTEMPLATES\CriticalPath.SharePoint.Samples.WingtipCalculator\WingtipCalcWebPart\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="CriticalPath.SharePoint.Samples.WingtipCalculator.WingtipCalcWebPart" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

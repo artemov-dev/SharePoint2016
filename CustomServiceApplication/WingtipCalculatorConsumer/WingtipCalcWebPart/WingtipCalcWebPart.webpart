@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="CriticalPath.SharePoint.Samples.WingtipCalculator.WingtipCalcWebPart.WingtipCalcWebPart, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Wingtip Calculator WebPart</property>
+        <property name="Description" type="string">Web Part that exposes the calculation operations provided by the Wingtip Calculation Service Application.</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
