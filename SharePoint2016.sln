@@ -21,8 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCSAdvancedAlerts", "..\CCS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XlstViewWebPart", "XlstViewWebPart\XlstViewWebPart.csproj", "{E2568279-65E7-4030-AB60-8796B23BA5C1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomServiceApplication", "CustomServiceApplication", "{C40253CC-186B-45C7-8249-09043EC198C6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
