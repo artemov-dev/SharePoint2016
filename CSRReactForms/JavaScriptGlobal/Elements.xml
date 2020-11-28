@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<!--
+		<CustomAction ScriptSrc="~site/_layouts/15/CSRReactForms/DynamicScript.js" Location="ScriptLink" Sequence="11" />
+	
+	<CustomAction Id="CSR" Location="ScriptLink" ScriptBlock="document.write('&lt;script src=&quot;http://localhost:3000/public/newsCSR.bundle.js&quot;&gt;&lt;/' + 'script&gt;');" Sequence="10" />
+	
+	<CustomAction Id="CSR" Location="ScriptLink" ScriptBlock="document.write('&lt;script src=&quot;~site/_layouts/15/CSRReactForms/public/newsCSR.bundle.js&quot;&gt;&lt;/' + 'script&gt;');" Sequence="10" />
+-->
+
+	<CustomAction Id="CSR" Location="ScriptLink" ScriptBlock="if (document.getElementsByTagName('meta').hasOwnProperty('development')) 
+				  { document.write('&lt;script src=&quot;http://localhost:3000/public/newsCSR.bundle.js&quot;&gt;&lt;/' + 'script&gt;'); }
+				  else { document.write('&lt;script src=&quot;~site/_layouts/15/CSRReactForms/public/newsCSR.bundle.js&quot;&gt;&lt;/' + 'script&gt;'); }" Sequence="10" />
+
+	
+
+
+</Elements>
