@@ -114,7 +114,14 @@
     <Content Include="Layouts\CSRReactForms\public\newsCSR.bundle.js" />
     <Content Include="CSRReactForm\Elements.xml" />
     <Content Include="CSRReactForm\MainPage.aspx" />
+    <Content Include="Layouts\CSRReactForms\src\MainPage.js" />
+    <Content Include="Layouts\CSRReactForms\src\NewsCsr.js" />
     <Content Include="Layouts\CSRReactForms\webpack.config.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Layouts\CSRReactForms\src\commandBar\commandBar.tsx" />
+    <TypeScriptCompile Include="Layouts\CSRReactForms\src\news\news.tsx" />
+    <TypeScriptCompile Include="Layouts\CSRReactForms\src\pivot.tsx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
