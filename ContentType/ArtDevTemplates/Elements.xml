@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="ArtDevTemplates" RootWebOnly="TRUE">
+    <File Path="ArtDevTemplates\Invoice.docx" Url="ArtDevTemplates/Invoice.docx" ReplaceContent="TRUE" />
+    <File Path="ArtDevTemplates\PurchaseOrder.docx" Url="ArtDevTemplates/PurchaseOrder.docx" ReplaceContent="TRUE" />
+  </Module>
+  
+</Elements>
+

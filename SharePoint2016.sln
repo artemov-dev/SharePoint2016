@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPages", "TestPages\Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointAddIn2016", "SharePointAddIn2016\SharePointAddIn2016.csproj", "{51B1C3FF-0445-4F08-8FBF-B13ECF075B20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRSForms", "CRSForms\CRSForms.csproj", "{A0B526EF-2C50-4B78-A42A-C442CC929CFB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallOutsAction", "CallOutsAction\CallOutsAction.csproj", "{FE6236FD-B8B8-4D37-8803-437FC736D16A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMultiField", "CMultiField\CMultiField.csproj", "{F657F027-0A4A-4DC5-85BF-A39E6E26D8D5}"
@@ -36,6 +34,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCSAdvancedAlerts", "CCSAdv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSRReactForms", "CSRReactForms\CSRReactForms.csproj", "{750BC983-3D07-4C2D-96D1-CDAEED106B3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentType", "ContentType\ContentType.csproj", "{E700E735-0113-482B-A401-B6BDA54DE6D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,12 +60,6 @@ Global
 		{51B1C3FF-0445-4F08-8FBF-B13ECF075B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51B1C3FF-0445-4F08-8FBF-B13ECF075B20}.Release|Any CPU.Build.0 = Release|Any CPU
 		{51B1C3FF-0445-4F08-8FBF-B13ECF075B20}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{A0B526EF-2C50-4B78-A42A-C442CC929CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A0B526EF-2C50-4B78-A42A-C442CC929CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A0B526EF-2C50-4B78-A42A-C442CC929CFB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{A0B526EF-2C50-4B78-A42A-C442CC929CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A0B526EF-2C50-4B78-A42A-C442CC929CFB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A0B526EF-2C50-4B78-A42A-C442CC929CFB}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{FE6236FD-B8B8-4D37-8803-437FC736D16A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FE6236FD-B8B8-4D37-8803-437FC736D16A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE6236FD-B8B8-4D37-8803-437FC736D16A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
@@ -114,6 +108,12 @@ Global
 		{750BC983-3D07-4C2D-96D1-CDAEED106B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{750BC983-3D07-4C2D-96D1-CDAEED106B3D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{750BC983-3D07-4C2D-96D1-CDAEED106B3D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E700E735-0113-482B-A401-B6BDA54DE6D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E700E735-0113-482B-A401-B6BDA54DE6D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E700E735-0113-482B-A401-B6BDA54DE6D4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E700E735-0113-482B-A401-B6BDA54DE6D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E700E735-0113-482B-A401-B6BDA54DE6D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E700E735-0113-482B-A401-B6BDA54DE6D4}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

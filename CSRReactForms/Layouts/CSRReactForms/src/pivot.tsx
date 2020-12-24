@@ -14,6 +14,9 @@ export const PivotLargeExample = () => (
       <PivotItem headerText="Shared with me">
         <Label>Pivot #3</Label>
       </PivotItem>
+      <PivotItem headerText="Comment">
+        <Label>Pivot #4</Label>
+      </PivotItem>
     </Pivot>
   </div>
 );
