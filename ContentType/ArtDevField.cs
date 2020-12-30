@@ -40,6 +40,7 @@ namespace ContentType
         public ArtDevField SetMultipleValue(bool condition)
         {
             if (this.field.Type == SPFieldType.User) { ((SPFieldUser)this.field).AllowMultipleValues = condition; }
+            if (this.field.Type == SPFieldType.Lookup) { ((SPFieldLookup)this.field).AllowMultipleValues = condition; }            
             this.field.Update(true);
             return this;
         }
@@ -59,6 +60,13 @@ namespace ContentType
                 Choices.ToList<string>().ForEach(value => ((SPFieldChoice)this.field).Choices.Add(value));
             }            
             return this; 
+        }
+
+        public ArtDevField SetLookupField(string field)
+        {
+            ((SPFieldLookup)this.field).LookupField = field;
+            this.field.Update(true);
+            return this;
         }
 
         public string GetInternalName()

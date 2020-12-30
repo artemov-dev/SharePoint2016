@@ -104,6 +104,30 @@ namespace ContentType
             return ArtDevField;
         }
 
+        public ArtDevField CreateFieldLookup(string Name, string ListUrl, string WebUrl = null)
+        {
+            SPList list = null; SPFieldLookup Field = null;
+            if (WebUrl == null)
+            {
+                list = this.Web().GetList(ListUrl); 
+                Field = NewOrRefLookup(Name, list);
+            }
+            else
+            {
+                using (SPSite site = new SPSite(this.site.Url))
+                {
+                    using (SPWeb web = site.OpenWeb(WebUrl))
+                    {
+                        list = web.GetList(ListUrl);
+                        Field = NewOrRefLookup(Name, list, web);
+                    }
+                }
+                
+            }
+            ArtDevField ArtDevField = new ArtDevField(Field);
+            return ArtDevField;
+        }
+
         public ArtDevContentType CreateContentType(string Name, SPContentTypeId parent)
         {
             SPContentType type = NewOrRefContentType(Name, parent);
@@ -172,10 +196,19 @@ namespace ContentType
             URLField.Group = this.columnGroup;
             return URLField;
         }
-        public SPFieldLookup NewOrRefLookup(string Name)
+        public SPFieldLookup NewOrRefLookup(string Name, SPList List, SPWeb web = null)
         {
-            string LookupName = this.Web().Fields.ContainsField(Name) ? Name : this.Web().Fields.Add(Name, SPFieldType.Lookup, false);
-            SPFieldLookup LookupField = (SPFieldLookup)this.Web().Fields.GetFieldByInternalName(LookupName);
+            string LookupName = ""; SPFieldLookup LookupField = null;
+            if (web == null) 
+            { 
+                LookupName = this.Web().Fields.ContainsField(Name) ? Name : this.Web().Fields.AddLookup(Name, List.ID, false);
+                LookupField = (SPFieldLookup)this.Web().Fields.GetFieldByInternalName(LookupName);
+            }
+            else 
+            { 
+                LookupName = web.Fields.ContainsField(Name) ? Name : web.Fields.AddLookup(Name, List.ID, web.ID, false);
+                LookupField = (SPFieldLookup)web.Fields.GetFieldByInternalName(LookupName);
+            }
             LookupField.Group = this.columnGroup;
             return LookupField;
         }

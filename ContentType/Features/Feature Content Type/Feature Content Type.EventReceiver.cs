@@ -46,6 +46,10 @@ namespace ContentType.Features.Feature_Content_Type
             ArtDevField EmployeeField = Feature.CreateFieldUser("FIOEmployee")
                 .SetTitle("ФИО Сотрудников").SetMultipleValue(false);
 
+            ArtDevField ActiveSiteField = Feature.CreateFieldLookup("ActiveSite", "SiteAssets")
+                .SetTitle("Активы сайта").SetMultipleValue(false).SetLookupField("Title");
+                
+
             /* CREATE SITE CONTENT TYPES */
 
             // Create the Financial Document
@@ -75,7 +79,8 @@ namespace ContentType.Features.Feature_Content_Type
                .AddFieldLink(dateOpenedField).SetRequired(true).Commit()
                .AddFieldLink(amountField).SetRequired(false).Commit()
                .AddFieldLink(EmployeeField).SetRequired(true).Commit()
-               .AddFieldLink(costCenterField).SetRequired(true).Commit()               
+               .AddFieldLink(costCenterField).SetRequired(true).Commit()
+               .AddFieldLink(ActiveSiteField).SetRequired(true).Commit()
                ;
 
 
