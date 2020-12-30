@@ -52,6 +52,8 @@
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtDevContentType.cs" />
+    <Compile Include="ArtDevField.cs" />
     <Compile Include="ArtDevList.cs" />
     <Compile Include="Features\Feature Content Type\Feature Content Type.EventReceiver.cs">
       <DependentUpon>Feature Content Type.feature</DependentUpon>

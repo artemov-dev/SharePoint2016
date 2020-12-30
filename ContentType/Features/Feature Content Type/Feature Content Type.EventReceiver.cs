@@ -22,99 +22,86 @@ namespace ContentType.Features.Feature_Content_Type
         {
             ArtDevFeature Feature = new ArtDevFeature(properties);
 
-            //Amount           
-            SPFieldCurrency amountField = Feature.NewOrRefCurrency("Amount");
-            amountField.Title = "Количество";
-            amountField.DisplayFormat = SPNumberFormatTypes.TwoDecimals;
-            amountField.MinimumValue = 0;
-            amountField.Update();
+            //Amount 
+            ArtDevField amountField = Feature.CreateFieldCurrency("Amount")
+                .SetTitle("Количество")
+                .SetDisplayFormat(SPNumberFormatTypes.TwoDecimals)
+                .SetMinimumValue(0);
 
-            // Client Name            
-            SPFieldText clientField = Feature.NewOrRefText("ClientName");            
-            clientField.Title = "Имя Клиента";
-            clientField.Update();
+            // Client Name       
+            ArtDevField clientField = Feature.CreateFieldText("ClientName")
+                .SetTitle("Имя Клиента");
 
             // Date Opened            
-            SPFieldDateTime dateOpenedField = Feature.NewOrRefDateTime("DateOpened");
-            dateOpenedField.DisplayFormat = SPDateTimeFieldFormatType.DateOnly;
-            dateOpenedField.DefaultValue = "[today]";
-            dateOpenedField.Title = "Дата открытия";
-            dateOpenedField.Update();
+            ArtDevField dateOpenedField = Feature.CreateFieldDateTime("DateOpened")
+                .SetTitle("Дата открытия")
+                .SetDisplayFormat(SPDateTimeFieldFormatType.DateOnly)
+                .SetDefaultValue("[today]");
 
             // Cost Center Name           
-            SPFieldChoice costCenterField = Feature.NewOrRefChoice("CostCenter");
-            costCenterField.Choices.Add("Administration");
-            costCenterField.Choices.Add("Information Services");
-            costCenterField.Choices.Add("Facilities");
-            costCenterField.Choices.Add("Operations");
-            costCenterField.Choices.Add("Sales");
-            costCenterField.Choices.Add("Marketing");
-            costCenterField.Title = "Центр Затрат";
-            costCenterField.Update();
+            ArtDevField costCenterField = Feature.CreateFieldChoice("CostCenter")
+                .SetChoices("Administration", "Information Services", "Facilities", "Operations", "Sales", "Marketing")
+                .SetTitle("Центр затрат");
 
+            ArtDevField EmployeeField = Feature.CreateFieldUser("FIOEmployee")
+                .SetTitle("ФИО Сотрудников").SetMultipleValue(false);
 
             /* CREATE SITE CONTENT TYPES */
-            SPContentType financialDocumentCType = Feature.NewOrRefContentType("Financial Document", SPBuiltInContentTypeId.Document);            
 
-            // Add the Date Opened column. Child content types inherit the column.
-            SPFieldLink dateOpenedFieldRef = new SPFieldLink(dateOpenedField);
-            dateOpenedFieldRef.Required = true;
-            financialDocumentCType.FieldLinks.Add(dateOpenedFieldRef);
-
-            // Add the Amount column. Child content types inherit the column.
-            SPFieldLink amountFieldRef = new SPFieldLink(amountField);            
-            financialDocumentCType.FieldLinks.Add(amountFieldRef);
-
-            // Commit changes.
-            financialDocumentCType.Update();
+            // Create the Financial Document
+            ArtDevContentType financialDocumentCType = Feature.CreateContentType("Financial Document", SPBuiltInContentTypeId.Document)
+                .RemoveOldLinks()
+                .AddFieldLink(dateOpenedField).SetRequired(true).Commit()
+                .AddFieldLink(amountField).Commit();
 
             // Create the Invoice content type.
-            SPContentType invoiceCType = Feature.NewOrRefContentType("Invoice", financialDocumentCType.Id);
-
-            // Modify the Title column inherited from the parent.
-            SPFieldLink serviceFieldRef = invoiceCType.FieldLinks[SPBuiltInFieldId.Title];
-            serviceFieldRef.DisplayName = "Service";
-            serviceFieldRef.Required = true;
-
-            // Add the Client column.
-            SPFieldLink clientFieldRef = new SPFieldLink(clientField);
-            clientFieldRef.Required = true;
-            invoiceCType.FieldLinks.Add(clientFieldRef);
-
-            // Specify a document template.
-            invoiceCType.DocumentTemplate = "/ArtDevTemplates/Invoice.docx";
-
-            // Commit changes.
-            invoiceCType.Update();
+            ArtDevContentType invoiceCType = Feature.CreateContentType("Invoice", financialDocumentCType.type.Id)
+                .RemoveOldLinks()
+                .GetFieldLink(SPBuiltInFieldId.Title).SetDisplayName("Service").SetRequired(true).Commit()                
+                .AddFieldLink(clientField).SetRequired(true).Commit()
+                .SetDocumentTemplate("/ArtDevTemplates/Invoice.docx").Commit();
 
             // Create the Purchase Order content type.
-            SPContentType purchaseOrderCType = Feature.NewOrRefContentType("Purchase Order", financialDocumentCType.Id);
+            ArtDevContentType purchaseOrderCType = Feature.CreateContentType("Purchase Order", financialDocumentCType.type.Id)
+                .RemoveOldLinks()
+                .GetFieldLink(SPBuiltInFieldId.Title).SetDisplayName("Item").SetRequired(true).Commit()
+                .AddFieldLink(costCenterField).SetDisplayName("Department").SetRequired(true).Commit()
+                .SetDocumentTemplate("/ArtDevTemplates/PurchaseOrder.docx").Commit();
 
-            // Modify the Title column inherited from the parent.
-            SPFieldLink itemFieldRef = purchaseOrderCType.FieldLinks[SPBuiltInFieldId.Title];
-            itemFieldRef.DisplayName = "Item";
-            itemFieldRef.Required = true;
+            ArtDevContentType CTypeOrder = Feature.CreateContentType("Orders", SPBuiltInContentTypeId.Item)
+               .RemoveOldLinks()
+               .GetFieldLink(SPBuiltInFieldId.Title).SetDisplayName("ФИО Клиента").SetRequired(true).Commit()               
+               .AddFieldLink(clientField).SetRequired(true).Commit()
+               .AddFieldLink(dateOpenedField).SetRequired(true).Commit()
+               .AddFieldLink(amountField).SetRequired(false).Commit()
+               .AddFieldLink(EmployeeField).SetRequired(true).Commit()
+               .AddFieldLink(costCenterField).SetRequired(true).Commit()               
+               ;
 
-            // Add the Department column.
-            SPFieldLink departmentFieldRef = new SPFieldLink(costCenterField);
-            departmentFieldRef.DisplayName = "Department";
-            departmentFieldRef.Required = true;
-            purchaseOrderCType.FieldLinks.Add(departmentFieldRef);
 
-            // Specify a document template.
-            purchaseOrderCType.DocumentTemplate = "/ArtDevTemplates/PurchaseOrder.docx";
-
-            // Commit changes.
-            purchaseOrderCType.Update();
 
             /* CREATE SITE LISTS BY CONTENT TYPE */
-            SPList document = Feature.NewOrRefLibrary("ArtDevDocuments");
-            document.Title = "ArtDev Документы";
-            ArtDevList list = new ArtDevList(document);            
-            list.addContentType(invoiceCType);            
-            list.removeContentTypeID(SPBuiltInContentTypeId.Document);
+            ArtDevList DocumentList = Feature.CreateDocumentLibrary("ArtDevDocument")
+                .SetListTitle("ArtDev Документы")
+                .RemoveStandartContentType()
+                .addContentType(invoiceCType);
 
-            SPList ArtDevForms = Feature.NewOrRefListTemplate("ArtDevForms");
+
+            ArtDevList OrderList = Feature.CreateList("Orders")
+                .SetListTitle("ArtDev Заказы")
+                .RemoveStandartContentType()
+                .addContentType(CTypeOrder)
+                .GetFieldLink(SPBuiltInFieldId.Title).SetFieldTitle("ФИО Клиента").Commit();
+                
+                
+
+            
+            // Name Template equal Name list
+            ArtDevList ArtDevForms = Feature.CreateListTemplate("ArtDevForms")
+                .SetListTitle("ArtDev Формы")
+                .RemoveStandartContentType()
+                .addContentType(CTypeOrder)
+                .GetFieldLink(SPBuiltInFieldId.Title).SetFieldTitle("ФИО Клиента").Commit();
 
         }
 
