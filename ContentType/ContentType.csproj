@@ -52,14 +52,10 @@
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtDevContentType.cs" />
-    <Compile Include="ArtDevField.cs" />
-    <Compile Include="ArtDevList.cs" />
     <Compile Include="Features\Feature Content Type\Feature Content Type.EventReceiver.cs">
       <DependentUpon>Feature Content Type.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ArtDevFeature.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ArtDevForms\SharePointProjectItem.spdata">
@@ -81,7 +77,12 @@
       <SharePointProjectItemId>{e04dcae8-66e4-47bc-982e-83822f00d8de}</SharePointProjectItemId>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ArtDev\ArtDev.csproj">
+      <Project>{76a2735d-d770-4980-840e-5933855f3d80}</Project>
+      <Name>ArtDev</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="ArtDevForms\Elements.xml" />
     <Content Include="ArtDevForms\Schema.xml" />
