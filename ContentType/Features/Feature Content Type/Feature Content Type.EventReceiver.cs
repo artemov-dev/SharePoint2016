@@ -49,6 +49,9 @@ namespace ContentType.Features.Feature_Content_Type
 
             ArtDevField ActiveSiteField = Feature.CreateFieldLookup("ActiveSite", "SiteAssets")
                 .SetTitle("Активы сайта").SetMultipleValue(false).SetLookupField("Title");
+
+            ArtDevField SettingValueField = Feature.CreateFieldText("SettingValue")
+                .SetTitle("Значение");
                 
 
             /* CREATE SITE CONTENT TYPES */
@@ -81,7 +84,7 @@ namespace ContentType.Features.Feature_Content_Type
                .AddFieldLink(amountField).SetRequired(false).Commit()
                .AddFieldLink(EmployeeField).SetRequired(true).Commit()
                .AddFieldLink(costCenterField).SetRequired(true).Commit()
-               .AddFieldLink(ActiveSiteField).SetRequired(true).Commit()
+             //  .AddFieldLink(ActiveSiteField).SetRequired(true).Commit()
                ;
 
 
@@ -97,9 +100,8 @@ namespace ContentType.Features.Feature_Content_Type
                 .SetListTitle("ArtDev Заказы")
                 .RemoveStandartContentType()
                 .addContentType(CTypeOrder)
-                .GetFieldLink(SPBuiltInFieldId.Title).SetFieldTitle("ФИО Клиента").Commit();
-                
-                
+                .GetFieldLink(SPBuiltInFieldId.Title).SetFieldTitle("ФИО Клиента").Commit()
+                .AddFieldLink(ActiveSiteField).SetFieldTitle("Активы сайтов").Commit();
 
             
             // Name Template equal Name list
@@ -108,6 +110,20 @@ namespace ContentType.Features.Feature_Content_Type
                 .RemoveStandartContentType()
                 .addContentType(CTypeOrder)
                 .GetFieldLink(SPBuiltInFieldId.Title).SetFieldTitle("ФИО Клиента").Commit();
+
+
+
+            ArtDevList ListSetting = Feature.CreateList("ArtDevSettings")
+                .SetListTitle("ArtDev Настройки")
+                .GetFieldLink(SPBuiltInFieldId.Title).SetFieldTitle("Параметр").SetFieldRequired(true).Commit()
+                .AddFieldLink(SettingValueField).SetFieldRequired(true).Commit()
+                .GetItemByTitle("URL2").SetItem(SettingValueField.field.Id, "http://{url}").Commit()
+                .GetItem(SettingValueField.field.Id, "http://{url}").SetItem(SPBuiltInFieldId.Title, "URL").Commit()
+                .AddItemIfNotExsist("URL2", "http://").Commit()
+                ; 
+            
+
+            
 
         }
 
