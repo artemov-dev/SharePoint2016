@@ -40,6 +40,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtDev", "ArtDev\ArtDev.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtDevWebPart", "ArtDevWebPart\ArtDevWebPart.csproj", "{DCD882F3-1ECC-4934-9BAA-F47B8A64E126}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtDevPages", "ArtDevPages\ArtDevPages.csproj", "{3A87AC36-4A49-4CE2-85A3-44DC1FD1C861}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DCD882F3-1ECC-4934-9BAA-F47B8A64E126} = {DCD882F3-1ECC-4934-9BAA-F47B8A64E126}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -128,6 +133,12 @@ Global
 		{DCD882F3-1ECC-4934-9BAA-F47B8A64E126}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCD882F3-1ECC-4934-9BAA-F47B8A64E126}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DCD882F3-1ECC-4934-9BAA-F47B8A64E126}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3A87AC36-4A49-4CE2-85A3-44DC1FD1C861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A87AC36-4A49-4CE2-85A3-44DC1FD1C861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A87AC36-4A49-4CE2-85A3-44DC1FD1C861}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3A87AC36-4A49-4CE2-85A3-44DC1FD1C861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A87AC36-4A49-4CE2-85A3-44DC1FD1C861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A87AC36-4A49-4CE2-85A3-44DC1FD1C861}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

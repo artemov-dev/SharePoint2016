@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="SitePages" Url="SitePages" List="101">
+    <File Path="SitePages\MainPages.aspx" Url="MainPages.aspx" IgnoreIfAlreadyExists="FALSE" ReplaceContent="TRUE" Type="GhostableInLibrary">
+      <AllUsersWebPart WebPartZoneID="MainPage" WebPartOrder="0">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3" >
+              <metaData>
+                <type name="ArtDevWebPart.JavaScriptBundle.JavaScriptBundle" />
+                <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+              </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">ArtDevWebPart - MainPage</property>
+                <property name="ReactRootElement" type="string">MainPage</property>
+                <property name="JSBundleFile" type="string">/_layouts/15/CSRReactForms/public/MainPage.bundle.js</property>
+              </properties>
+            </data>
+          </webPart>          
+        </webParts>
+        ]]>
+      </AllUsersWebPart>
+    </File>
+  </Module>
+</Elements>
