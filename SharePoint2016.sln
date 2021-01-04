@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentType", "ContentType\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtDev", "ArtDev\ArtDev.csproj", "{76A2735D-D770-4980-840E-5933855F3D80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtDevWebPart", "ArtDevWebPart\ArtDevWebPart.csproj", "{DCD882F3-1ECC-4934-9BAA-F47B8A64E126}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -120,6 +122,12 @@ Global
 		{76A2735D-D770-4980-840E-5933855F3D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76A2735D-D770-4980-840E-5933855F3D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76A2735D-D770-4980-840E-5933855F3D80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCD882F3-1ECC-4934-9BAA-F47B8A64E126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCD882F3-1ECC-4934-9BAA-F47B8A64E126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCD882F3-1ECC-4934-9BAA-F47B8A64E126}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DCD882F3-1ECC-4934-9BAA-F47B8A64E126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCD882F3-1ECC-4934-9BAA-F47B8A64E126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCD882F3-1ECC-4934-9BAA-F47B8A64E126}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
