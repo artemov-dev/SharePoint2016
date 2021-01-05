@@ -242,6 +242,7 @@ namespace ArtDev
             Document.Update();
             return Document;
         }
+        
 
         public SPList NewOrRefListTemplate(string Name)
         {

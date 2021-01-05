@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0fafa23a-e177-44dc-ac09-356f974572c6" solutionId="0fafa23a-e177-44dc-ac09-356f974572c6" resetWebServer="false" sharePointProductVersion="16.0" name="ArtDevPages" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="ArtDev.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\ArtDev\ArtDev.csproj" />
+  </assemblies>
   <features>
+    <featureReference itemId="5e0116b2-3f19-4681-9a7b-ac53b3981123" />
     <featureReference itemId="cdf1be47-2e02-49f0-adae-15befd6bbcf6" />
   </features>
 </package>

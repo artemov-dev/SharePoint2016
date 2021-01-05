@@ -52,11 +52,17 @@
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\ArtDevLists\ArtDevLists.EventReceiver.cs">
+      <DependentUpon>ArtDevLists.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Features\ArtDevPages\ArtDevPages.feature">
       <FeatureId>{cdf1be47-2e02-49f0-adae-15befd6bbcf6}</FeatureId>
+    </None>
+    <None Include="Features\ArtDevLists\ArtDevLists.feature">
+      <FeatureId>{5e0116b2-3f19-4681-9a7b-ac53b3981123}</FeatureId>
     </None>
     <None Include="key.snk" />
     <None Include="Package\Package.package">
@@ -65,7 +71,7 @@
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
-    <None Include="SitePages\SharePointProjectItem.spdata">
+    <None Include="ArtDevPages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{9605f067-dcf2-49e3-942b-77f504564822}</SharePointProjectItemId>
     </None>
   </ItemGroup>
@@ -73,8 +79,17 @@
     <Content Include="Features\ArtDevPages\ArtDevPages.Template.xml">
       <DependentUpon>ArtDevPages.feature</DependentUpon>
     </Content>
-    <Content Include="SitePages\MainPages.aspx" />
-    <Content Include="SitePages\Elements.xml" />
+    <Content Include="ArtDevPages\MainPages.aspx" />
+    <Content Include="ArtDevPages\Elements.xml" />
+    <Content Include="Features\ArtDevLists\ArtDevLists.Template.xml">
+      <DependentUpon>ArtDevLists.feature</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArtDev\ArtDev.csproj">
+      <Project>{76a2735d-d770-4980-840e-5933855f3d80}</Project>
+      <Name>ArtDev</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

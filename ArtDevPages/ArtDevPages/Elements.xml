@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="SitePages" Url="SitePages" List="101">
-    <File Path="SitePages\MainPages.aspx" Url="MainPages.aspx" IgnoreIfAlreadyExists="FALSE" ReplaceContent="TRUE" Type="GhostableInLibrary">
+  <Module Name="ArtDevPages" Url="ArtDevPages" List="101">
+    <File Path="ArtDevPages\MainPages.aspx" Url="MainPages.aspx" IgnoreIfAlreadyExists="FALSE" ReplaceContent="TRUE" Type="GhostableInLibrary">
       <AllUsersWebPart WebPartZoneID="MainPage" WebPartOrder="0">
         <![CDATA[
           <webParts>

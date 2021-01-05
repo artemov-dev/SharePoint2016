@@ -36,6 +36,15 @@ namespace ArtDev
             return this;
         }
 
+        public ArtDevList addContentType(SPContentTypeId typeID)
+        {
+            SPContentType CType = this.list.ParentWeb.AvailableContentTypes[typeID];
+            CType = this.list.ContentTypes.Cast<SPContentType>().FirstOrDefault(c => c.Name.Equals(CType.Name)) ?? this.list.ContentTypes.Add(CType);            
+            this.list.Update();            
+            return this;
+        }
+
+
         public ArtDevList removeContentTypeID(SPContentTypeId typeID)
         {
             SPContentType CType = this.list.ParentWeb.AvailableContentTypes[typeID];
