@@ -79,14 +79,15 @@ namespace ArtDev
         public ArtDevList GetFieldLink(Guid guid)
         {
             SPField Field = this.list.ParentWeb.AvailableFields[guid];            
-            this.Field = this.list.Fields.GetFieldByInternalName(Field.InternalName) ?? null;  
-            if (this.Field != null) { this.sPFields.Add(this.Field); }
+            this.Field = this.list.Fields.TryGetFieldByStaticName(Field.InternalName) ?? null;  
+            if (this.Field != null) { this.sPFields.Add(this.Field); this.Field = this.list.Fields.TryGetFieldByStaticName(Field.InternalName); }
             return this;
         }
 
         public SPField GetField(Guid guid)
         {
-            return this.list.ParentWeb.AvailableFields[guid];
+            SPField Field =  this.list.ParentWeb.AvailableFields[guid];
+            return this.list.Fields.GetFieldByInternalName(Field.InternalName) ?? null;
         }
 
         public ArtDevList AddFieldLink(ArtDevField field)
@@ -94,8 +95,18 @@ namespace ArtDev
             this.artDevFields.Add(field);
             this.sPFields.Add(field.field);
             SPField sPField = this.list.Fields.TryGetFieldByStaticName(field.field.StaticName) ?? null;
-            if (sPField == null) { this.list.Fields.Add(field.field); this.Field = field.field; }
+            if (sPField == null) { this.list.Fields.Add(field.field); this.Field = this.list.Fields.TryGetFieldByStaticName(field.field.StaticName); }
             else { this.Field = sPField; }            
+            return this;
+        }
+
+        public ArtDevList AddFieldLink(Guid guid)
+        {
+            SPField field = this.list.ParentWeb.AvailableFields[guid];
+            this.sPFields.Add(field);
+            SPField sPField = this.list.Fields.TryGetFieldByStaticName(field.StaticName) ?? null;
+            if (sPField == null) { this.list.Fields.Add(field); this.Field = this.list.Fields.TryGetFieldByStaticName(field.StaticName);   }
+            else { this.Field = sPField; }
             return this;
         }
 
@@ -189,12 +200,72 @@ namespace ArtDev
                 int i = 0;
                 Values.ToList<string>().ForEach(value =>
                 {
-
                     string Name = this.sPFields[i].InternalName;
                     sPListItem[Name] = value;
                     i++;
                 });
                 sPListItem.Update();
+            }
+            return this;
+        }
+
+        public ArtDevList AddOrUpdateItemIfNotExsist(params string[] Values)
+        {
+            this.GetItem(SPBuiltInFieldId.Title, Values[0]);
+            if (this.Item == null)
+            {
+                SPListItem sPListItem = this.list.Items.Add();
+                int i = 0;
+                Values.ToList<string>().ForEach(value =>
+                {
+                    string Name = this.sPFields[i].InternalName;
+                    sPListItem[Name] = value;
+                    i++;
+                });
+                sPListItem.Update();
+            }
+            else
+            {
+                int i = 0;
+                Values.ToList<string>().ForEach(value => 
+                {
+                    string Name = this.sPFields[i].InternalName;                    
+                    if ((string)this.Item[Name] == "" || this.Item[Name] == null)
+                    {
+                        this.Item[Name] = value;
+                    }
+                    i++;
+                });
+                this.Item.Update();
+            }
+            return this;
+        }
+
+        public ArtDevList AddOrUpdateItem(params string[] Values)
+        {
+            this.GetItem(SPBuiltInFieldId.Title, Values[0]);
+            if (this.Item == null)
+            {
+                SPListItem sPListItem = this.list.Items.Add();
+                int i = 0;
+                Values.ToList<string>().ForEach(value =>
+                {
+                    string Name = this.sPFields[i].InternalName;
+                    sPListItem[Name] = value;
+                    i++;
+                });
+                sPListItem.Update();
+            }
+            else
+            {
+                int i = 0;
+                Values.ToList<string>().ForEach(value =>
+                {
+                    string Name = this.sPFields[i].InternalName;
+                    this.Item[Name] = value;                    
+                    i++;
+                });
+                this.Item.Update();
             }
             return this;
         }
