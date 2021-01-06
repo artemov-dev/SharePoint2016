@@ -104,6 +104,13 @@ namespace ArtDev
             return ArtDevField;
         }
 
+        public ArtDevField CreateFieldMultiLineText(string Name)
+        {
+            SPFieldMultiLineText Field = NewOrRefMultiLineText(Name);
+            ArtDevField ArtDevField = new ArtDevField(Field);
+            return ArtDevField;
+        }
+
         public ArtDevField CreateFieldLookup(string Name, string ListUrl, string WebUrl = null)
         {
             SPList list = null; SPFieldLookup Field = null;
@@ -188,7 +195,8 @@ namespace ArtDev
             SPFieldUser UserField = (SPFieldUser)this.Web().Fields.GetFieldByInternalName(UserName);
             UserField.Group = this.columnGroup;
             return UserField;
-        }
+        }        
+
         public SPFieldUrl NewOrRefURL(string Name)
         {
             string URLName = this.Web().Fields.ContainsField(Name) ? Name : this.Web().Fields.Add(Name, SPFieldType.URL, false);
