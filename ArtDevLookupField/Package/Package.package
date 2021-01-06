@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="32489a7d-3a43-4bee-aad8-6a66cb970bc5" solutionId="32489a7d-3a43-4bee-aad8-6a66cb970bc5" resetWebServer="false" sharePointProductVersion="16.0" name="ArtDevLookupField" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <assemblies>
-    <projectOutputAssembly location="ArtDev.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\ArtDev\ArtDev.csproj" />
-  </assemblies>
-  <features>
-    <featureReference itemId="33c89a70-3966-4482-91c4-3b42e2600261" />
-  </features>
-</package>
