@@ -261,5 +261,18 @@ namespace ArtDev
             return ListInstance;
         }
 
+        public void MDSDisable()
+        {
+            try
+            {
+                SPFeature feature = web.Features.First(f => f.Definition.DisplayName.Equals("MDSFeature"));
+                web.Features.Remove(feature.DefinitionId);
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
+
     }
 }
