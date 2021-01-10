@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FieldTypes>
+  <FieldType>
+    <Field Name="TypeName">ArtDevLookup</Field>
+    <Field Name="TypeDisplayName">ArtDevLookup</Field>
+    <Field Name="TypeShortDescription">ArtDevLookup</Field>
+    <Field Name="ParentType">Text</Field>
+    <Field Name="UserCreatable">TRUE</Field>
+    <Field Name="FieldTypeClass">ArtDevLookupField.ArtDevLookup,$SharePoint.Project.AssemblyFullName$</Field>
+    <PropertySchema>
+      <Fields>
+        <Field Name="List" DisplayName="List" Type="Text" Description="/Lists/ListName">
+          <Default></Default>
+        </Field>
+        <Field Name="Field" DisplayName="Field" Type="Text" Description="InternalName">
+          <Default></Default>
+        </Field>
+      </Fields>
+    </PropertySchema>
+  </FieldType>
+</FieldTypes>
