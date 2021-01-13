@@ -10,7 +10,7 @@
 
 	<CustomAction Id="CSR" Location="ScriptLink" ScriptBlock="if (document.getElementsByTagName('meta').hasOwnProperty('development')) 
 				  { document.write('&lt;script src=&quot;http://localhost:3000/public/newsCSR.bundle.js&quot;&gt;&lt;/' + 'script&gt;'); }
-				  else { document.write('&lt;script src=&quot;~site/_layouts/15/CSRReactForms/public/newsCSR.bundle.js&quot;&gt;&lt;/' + 'script&gt;'); }" Sequence="10" />
+				  else { document.write('&lt;script src=&quot;~site/_layouts/15/CSRReactForms/public/newsCSR.bundle.js&quot;&gt;&lt;/' + 'script&gt;'); }" Sequence="11" />
 
 	
 

@@ -80,8 +80,27 @@
       <SharePointProjectItemId>{85e57e54-3be9-4bc0-ac6f-74deaed8af15}</SharePointProjectItemId>
     </None>
     <None Include="key.snk" />
+    <None Include="Layouts\CSRReactForms\package-lock.json" />
     <None Include="Layouts\CSRReactForms\package.json" />
-    <None Include="Layouts\CSRReactForms\public\MainPage.bundle.js.map" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-0-467ee27f.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-1-4d521695.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-10-c4ded8e4.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-11-2a8393d6.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-12-7e945a1e.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-13-c3989a02.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-14-5cf58db8.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-15-3807251b.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-16-9cf93f3b.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-17-0c4ed701.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-2-63c99abf.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-3-089e217a.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-4-a656cc0a.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-5-f95ba260.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-6-ef6fd590.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-7-2b97bb99.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-8-6fdf1528.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-9-c6162b42.woff" />
+    <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-a13498cf.woff" />
     <None Include="Layouts\CSRReactForms\public\newsCSR.bundle.js.map" />
     <None Include="Layouts\CSRReactForms\tsconfig.json" />
     <None Include="Layouts\CSRReactForms\tslint.json" />
@@ -93,9 +112,6 @@
     </None>
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
-    </None>
-    <None Include="CSRReactForm\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{a929bc78-2be8-4894-b673-0775216838d0}</SharePointProjectItemId>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -110,19 +126,18 @@
       <DependentUpon>CSRReactForm.feature</DependentUpon>
     </Content>
     <Content Include="JavaScriptGlobal\Elements.xml" />
-    <Content Include="Layouts\CSRReactForms\public\MainPage.bundle.js" />
     <Content Include="Layouts\CSRReactForms\public\newsCSR.bundle.js" />
-    <Content Include="CSRReactForm\Elements.xml" />
-    <Content Include="CSRReactForm\MainPage.aspx" />
-    <Content Include="Layouts\CSRReactForms\src\MainPage.js" />
+    <Content Include="Layouts\CSRReactForms\src\CSR.js" />
     <Content Include="Layouts\CSRReactForms\src\NewsCsr.js" />
     <Content Include="Layouts\CSRReactForms\webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Layouts\CSRReactForms\src\commandBar\commandBar.tsx" />
-    <TypeScriptCompile Include="Layouts\CSRReactForms\src\news\news.tsx" />
-    <TypeScriptCompile Include="Layouts\CSRReactForms\src\pivot.tsx" />
+    <TypeScriptCompile Include="Layouts\CSRReactForms\src\commandBar\CommandBarNews.tsx" />
+    <TypeScriptCompile Include="Layouts\CSRReactForms\src\commandBar\wrap.tsx" />
+    <TypeScriptCompile Include="Layouts\CSRReactForms\src\controls\ControlTab.tsx" />
+    <TypeScriptCompile Include="Layouts\CSRReactForms\src\controls\ControlText.tsx" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

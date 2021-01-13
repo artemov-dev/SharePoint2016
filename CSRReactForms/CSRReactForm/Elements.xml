@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="CSRReactForm" Url="SitePages" List="101">
-    <File Path="CSRReactForm\MainPage.aspx" Url="MainPage.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" IgnoreIfAlreadyExists="FALSE" />
-  </Module>
-</Elements>
