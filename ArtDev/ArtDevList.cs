@@ -1,9 +1,11 @@
 ﻿using Microsoft.SharePoint;
+using Microsoft.SharePoint.WebPartPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls.WebParts;
 
 namespace ArtDev
 {
@@ -270,6 +272,28 @@ namespace ArtDev
             return this;
         }
 
+        public ArtDevList SetJSLinkView(string Url)
+        {
+            var file = this.list.ParentWeb.GetFile(this.list.DefaultView.Url);
+            file.CheckOut();
+
+            using (var manager = file.GetLimitedWebPartManager(PersonalizationScope.Shared))
+            {
+                var webPart = manager.WebParts.OfType<XsltListViewWebPart>().FirstOrDefault();
+                if (webPart != null && this.list.ParentWeb.AllProperties["DEV"].ToString() != "true")
+                {
+                    webPart.JSLink = Url ?? string.Empty;
+                    manager.SaveChanges(webPart);
+                }
+                else {
+                    webPart.JSLink = string.Empty;
+                    manager.SaveChanges(webPart);
+                }
+            }
+
+            file.CheckIn("Added JSLink to the Form");
+            return this;
+        }
     }
 }
  
