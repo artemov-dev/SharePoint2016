@@ -2,13 +2,13 @@
 <webParts>
   <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
     <metaData>
-      <type name="ArtDevWebPart.JavaScriptBundle.JavaScriptBundle, $SharePoint.Project.AssemblyFullName$" />
+      <type name="ArtDevWebPart.JSBundleReact.JSBundleReact, $SharePoint.Project.AssemblyFullName$" />
       <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
     </metaData>
     <data>
       <properties>
-        <property name="Title" type="string">ArtDevWebPart - JavaScriptBundle</property>
-        <property name="Description" type="string">ArtDevWebPart - JavaScriptBundle</property>
+        <property name="Title" type="string">ArtDevWebPart - JSBundleReact</property>
+        <property name="Description" type="string">ArtDevWebPart - JSBundleReact</property>
       </properties>
     </data>
   </webPart>

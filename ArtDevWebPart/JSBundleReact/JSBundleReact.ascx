@@ -5,18 +5,19 @@
 <%@ Register Tagprefix="asp" Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
 <%@ Import Namespace="Microsoft.SharePoint" %> 
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
-<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="JavaScriptBundle.ascx.cs" Inherits="ArtDevWebPart.JavaScriptBundle.JavaScriptBundle" %>
-
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="JSBundleReact.ascx.cs" Inherits="ArtDevWebPart.JSBundleReact.JSBundleReact" %>
  <script>
      function CallBackScriptBundle(path) {
          file = path.substring(path.lastIndexOf("/") + 1)
-         script = document.createElement('script');
-         if (document.getElementsByTagName('meta').hasOwnProperty('development')) {
-             script.setAttribute('src', 'http://localhost:3000/public/' + file);
+         if (file != '') {         
+                 script = document.createElement('script');
+                 if (document.getElementsByTagName('meta').hasOwnProperty('development')) {
+                     script.setAttribute('src', 'http://localhost:3000/public/' + file);
+                 }
+                 else {
+                     script.setAttribute('src', path);
+                 }
+                     document.head.appendChild(script);
          }
-         else {
-             script.setAttribute('src', path);
-         }
-         document.head.appendChild(script);
      }
  </script>

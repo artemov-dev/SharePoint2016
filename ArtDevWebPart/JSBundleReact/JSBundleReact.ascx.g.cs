@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ArtDevWebPart.JavaScriptBundle {
+namespace ArtDevWebPart.JSBundleReact {
     using System.Web.UI.WebControls.Expressions;
     using System.Web.UI.HtmlControls;
     using System.Collections;
@@ -37,10 +37,10 @@ namespace ArtDevWebPart.JavaScriptBundle {
     using System.CodeDom.Compiler;
     
     
-    public partial class JavaScriptBundle {
+    public partial class JSBundleReact {
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebPartCodeGenerator", "16.0.0.0")]
-        public static implicit operator global::System.Web.UI.TemplateControl(JavaScriptBundle target) 
+        public static implicit operator global::System.Web.UI.TemplateControl(JSBundleReact target) 
         {
             return target == null ? null : target.TemplateControl;
         }
@@ -48,21 +48,22 @@ namespace ArtDevWebPart.JavaScriptBundle {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +
             "artCodeGenerator", "16.0.0.0")]
-        private void @__BuildControlTree(global::ArtDevWebPart.JavaScriptBundle.JavaScriptBundle @__ctrl) {
+        private void @__BuildControlTree(global::ArtDevWebPart.JSBundleReact.JSBundleReact @__ctrl) {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
-
  <script>
      function CallBackScriptBundle(path) {
          file = path.substring(path.lastIndexOf(""/"") + 1)
-         script = document.createElement('script');
-         if (document.getElementsByTagName('meta').hasOwnProperty('development')) {
-             script.setAttribute('src', 'http://localhost:3000/public/' + file);
+         if (file != '') {         
+                 script = document.createElement('script');
+                 if (document.getElementsByTagName('meta').hasOwnProperty('development')) {
+                     script.setAttribute('src', 'http://localhost:3000/public/' + file);
+                 }
+                 else {
+                     script.setAttribute('src', path);
+                 }
+                     document.head.appendChild(script);
          }
-         else {
-             script.setAttribute('src', path);
-         }
-         document.head.appendChild(script);
      }
  </script>"));
         }

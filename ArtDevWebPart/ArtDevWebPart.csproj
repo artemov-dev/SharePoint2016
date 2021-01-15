@@ -56,23 +56,27 @@
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JavaScriptBundle\JavaScriptBundle.ascx.cs">
-      <DependentUpon>JavaScriptBundle.ascx</DependentUpon>
+    <Compile Include="ArtDevContentType.cs" />
+    <Compile Include="ArtDevFeature.cs" />
+    <Compile Include="ArtDevField.cs" />
+    <Compile Include="ArtDevList.cs" />
+    <Compile Include="JSBundleReact\JSBundleReact.ascx.cs">
+      <DependentUpon>JSBundleReact.ascx</DependentUpon>
     </Compile>
-    <Compile Include="JavaScriptBundle\JavaScriptBundle.ascx.g.cs">
+    <Compile Include="JSBundleReact\JSBundleReact.ascx.g.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>JavaScriptBundle.ascx</DependentUpon>
+      <DependentUpon>JSBundleReact.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\ArtDevWebPart\ArtDevWebPart.feature">
+    <None Include="Features\SiteFeature\SiteFeature.feature">
       <FeatureId>{25b66fd4-3432-4317-98a1-74a7ca3681fa}</FeatureId>
     </None>
-    <None Include="JavaScriptBundle\JavaScriptBundle.webpart" />
-    <None Include="JavaScriptBundle\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{48861356-7fb6-4daa-971b-34cc8a26962d}</SharePointProjectItemId>
+    <None Include="JSBundleReact\JSBundleReact.webpart" />
+    <None Include="JSBundleReact\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7cfd3a2d-793c-4985-a468-72410aa8cead}</SharePointProjectItemId>
     </None>
     <None Include="key.snk" />
     <None Include="Package\Package.package">
@@ -83,13 +87,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Features\ArtDevWebPart\ArtDevWebPart.Template.xml">
-      <DependentUpon>ArtDevWebPart.feature</DependentUpon>
+    <Content Include="Features\SiteFeature\SiteFeature.Template.xml">
+      <DependentUpon>SiteFeature.feature</DependentUpon>
     </Content>
-    <Content Include="JavaScriptBundle\Elements.xml" />
-    <Content Include="JavaScriptBundle\JavaScriptBundle.ascx">
+    <Content Include="JSBundleReact\Elements.xml" />
+    <Content Include="JSBundleReact\JSBundleReact.ascx">
       <Generator>SharePointWebPartCodeGenerator</Generator>
-      <LastGenOutput>JavaScriptBundle.ascx.g.cs</LastGenOutput>
+      <LastGenOutput>JSBundleReact.ascx.g.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
