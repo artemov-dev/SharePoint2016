@@ -7,11 +7,11 @@
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="JSBundleReact.ascx.cs" Inherits="ArtDevWebPart.JSBundleReact.JSBundleReact" %>
  <script>
-     function CallBackScriptBundle(path) {
+     function CallBackScriptBundle(path, mode) {
          file = path.substring(path.lastIndexOf("/") + 1)
          if (file != '') {         
                  script = document.createElement('script');
-                 if (document.getElementsByTagName('meta').hasOwnProperty('development')) {
+                 if (mode == 'true') {
                      script.setAttribute('src', 'http://localhost:3000/public/' + file);
                  }
                  else {

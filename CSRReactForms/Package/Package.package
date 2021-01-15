@@ -2,6 +2,7 @@
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="fd621e2b-e76f-46a5-826b-b8c8f0fc87ad" solutionId="fd621e2b-e76f-46a5-826b-b8c8f0fc87ad" resetWebServer="false" sharePointProductVersion="16.0" name="CSRReactForms" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
   <features>
     <featureReference itemId="be43211e-f751-46f4-bb4f-7b192e32b908" />
+    <featureReference itemId="25b66fd4-3432-4317-98a1-74a7ca3681fa" projectPath="..\ArtDevWebPart\ArtDevWebPart.csproj" />
   </features>
   <projectItems>
     <projectItemReference itemId="db778315-4156-471d-baf0-ad390719ce56" />

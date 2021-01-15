@@ -52,11 +52,11 @@ namespace ArtDevWebPart.JSBundleReact {
             System.Web.UI.IParserAccessor @__parser = ((System.Web.UI.IParserAccessor)(@__ctrl));
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
  <script>
-     function CallBackScriptBundle(path) {
+     function CallBackScriptBundle(path, mode) {
          file = path.substring(path.lastIndexOf(""/"") + 1)
          if (file != '') {         
                  script = document.createElement('script');
-                 if (document.getElementsByTagName('meta').hasOwnProperty('development')) {
+                 if (mode == 'true') {
                      script.setAttribute('src', 'http://localhost:3000/public/' + file);
                  }
                  else {

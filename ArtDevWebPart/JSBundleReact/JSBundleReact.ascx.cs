@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SharePoint;
+using System;
 using System.ComponentModel;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
@@ -33,9 +34,17 @@ namespace ArtDevWebPart.JSBundleReact
             div.Attributes.Add("id", ReactRootElement);
             controlCollection.AddAt(0, div);
             ((JSBundleReact)sender).ChromeType = PartChromeType.None;
-            ClientScriptManager csm = ((JSBundleReact)sender).Page.ClientScript;
-            string script = "window.onload = function() { CallBackScriptBundle('" + JSBundleFile + "'); };";
+            string mode;
+            using (SPSite siteCollection = new SPSite(SPContext.Current.Web.Url))
+            {
+                using (SPWeb web = siteCollection.OpenWeb())
+                {
+                    mode = web.AllProperties["DEV"].ToString();
+                }
+            }
 
+            string script = "window.onload = function() { CallBackScriptBundle('" + JSBundleFile + "','"+ mode  + "'); };";
+            ClientScriptManager csm = ((JSBundleReact)sender).Page.ClientScript;
             if (!csm.IsStartupScriptRegistered(this.GetType(), "CallBackScriptBundle"))
             {
                 csm.RegisterStartupScript(this.GetType(), "CallBackScriptBundle", script, true);
