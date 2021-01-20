@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using Microsoft.SharePoint;
+using ArtDev;
 
 namespace CSRReactForms.Features.SPWebReactForms
 {
@@ -21,14 +22,11 @@ namespace CSRReactForms.Features.SPWebReactForms
 
         public override void FeatureActivated(SPFeatureReceiverProperties properties)
         {
-            SPWeb web = properties.Feature.Parent as SPWeb;
-            try {
-                SPFeature feature = web.Features.First(f => f.Definition.DisplayName.Equals("MDSFeature"));
-                web.Features.Remove(feature.DefinitionId);
-            }
-            catch(Exception ex) {
-                LoggingService.LogError("Deploy", ex.Message);                
-            }
+            ArtDevFeature feature = new ArtDevFeature(properties);
+            feature.MDSDisable();
+            feature.CreateListTemplate("Announcements")
+                .SetJSLinkView("~sitecollection/_layouts/15/CSRReactForms/public/CSRAnonceView.bundle.js");
+            
         }
 
 

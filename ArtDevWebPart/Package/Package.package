@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="73875761-193f-4f45-9fcd-8512b04d026d" solutionId="73875761-193f-4f45-9fcd-8512b04d026d" resetWebServer="false" sharePointProductVersion="16.0" name="ArtDevWebPart" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ca6fb4ab-4d40-448a-95fc-c3561daa5b05" solutionId="ca6fb4ab-4d40-448a-95fc-c3561daa5b05" resetWebServer="false" sharePointProductVersion="16.0" name="ArtDevWebPart" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
   <features>
-    <featureReference itemId="25b66fd4-3432-4317-98a1-74a7ca3681fa" />
+    <featureReference itemId="fab69f23-e5ce-4d59-b299-7d0fd7b80e18" />
   </features>
 </package>

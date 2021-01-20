@@ -1,0 +1,233 @@
+﻿<Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF8E4DB3-DD0E-4C2A-89DD-0C9F361188A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JobPortal</RootNamespace>
+    <AssemblyName>JobPortal</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetOfficeVersion>16.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <MinimumOfficeToolsVersion>14.0</MinimumOfficeToolsVersion>
+    <SandboxedSolution>False</SandboxedSolution>
+    <PreDeploymentCommand>
+    </PreDeploymentCommand>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\Lists\Lists.EventReceiver.cs">
+      <DependentUpon>Lists.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\MasterPage\MasterPage.EventReceiver.cs">
+      <DependentUpon>MasterPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ArtDevPages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2446796e-1d78-4865-aee1-e24fc8fd95cf}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Pages\Pages.feature">
+      <FeatureId>{1be3dc62-ce21-4a3b-b1db-537ded29a295}</FeatureId>
+    </None>
+    <None Include="Features\Lists\Lists.feature">
+      <FeatureId>{0777d838-0bb9-4fdc-a3b2-59d36f57c482}</FeatureId>
+    </None>
+    <None Include="Features\MasterPage\MasterPage.feature">
+      <FeatureId>{b1fd8437-b028-4b5c-befb-10e1f415c075}</FeatureId>
+    </None>
+    <None Include="JavaScriptGlobal\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2cbbded5-6e0c-4000-b4b4-a70ff3ed35ac}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\JobPortal\bootstrap\css\bootstrap-theme.css.map" />
+    <None Include="Layouts\JobPortal\bootstrap\css\bootstrap.css.map" />
+    <None Include="Layouts\JobPortal\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Layouts\JobPortal\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\JobPortal\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Layouts\JobPortal\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Layouts\JobPortal\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="Layouts\JobPortal\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="Layouts\JobPortal\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="Layouts\JobPortal\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <None Include="Layouts\JobPortal\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="Layouts\JobPortal\font-awesome\less\animated.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\bordered-pulled.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\core.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\fixed-width.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\font-awesome.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\icons.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\larger.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\list.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\mixins.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\path.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\rotated-flipped.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\screen-reader.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\stacked.less" />
+    <None Include="Layouts\JobPortal\font-awesome\less\variables.less" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\font-awesome.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_animated.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_bordered-pulled.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_core.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_fixed-width.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_icons.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_larger.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_list.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_mixins.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_path.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_rotated-flipped.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_screen-reader.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_stacked.scss" />
+    <None Include="Layouts\JobPortal\font-awesome\scss\_variables.scss" />
+    <None Include="Layouts\JobPortal\react\package-lock.json" />
+    <None Include="Layouts\JobPortal\react\package.json" />
+    <None Include="Layouts\JobPortal\react\public\header.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\tsconfig.json" />
+    <None Include="Layouts\JobPortal\react\tslint.json" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{acebfd81-2647-4a96-b2f9-c03b3af59caf}</SharePointProjectItemId>
+    </None>
+    <None Include="MasterPage\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bd1bd369-072d-4702-80a2-52cd3b22dcc5}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{cb38ef1d-eff1-41e2-839b-3eec82885a90}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ArtDevPages\Elements.xml" />
+    <Content Include="ArtDevPages\MainPages.aspx" />
+    <Content Include="Features\Pages\Pages.Template.xml">
+      <DependentUpon>Pages.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Lists\Lists.Template.xml">
+      <DependentUpon>Lists.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\MasterPage\MasterPage.Template.xml">
+      <DependentUpon>MasterPage.feature</DependentUpon>
+    </Content>
+    <Content Include="JavaScriptGlobal\Elements.xml" />
+    <Content Include="Layouts\JobPortal\bootstrap\css\bootstrap-select.css" />
+    <Content Include="Layouts\JobPortal\bootstrap\css\bootstrap-select.min.css" />
+    <Content Include="Layouts\JobPortal\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Layouts\JobPortal\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Layouts\JobPortal\bootstrap\css\bootstrap.css" />
+    <Content Include="Layouts\JobPortal\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Layouts\JobPortal\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\JobPortal\bootstrap\js\bootstrap-select.js" />
+    <Content Include="Layouts\JobPortal\bootstrap\js\bootstrap-select.min.js" />
+    <Content Include="Layouts\JobPortal\bootstrap\js\bootstrap.js" />
+    <Content Include="Layouts\JobPortal\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Layouts\JobPortal\bootstrap\js\npm.js" />
+    <Content Include="Layouts\JobPortal\css\fabric-icons-inline.css" />
+    <Content Include="Layouts\JobPortal\css\style.css" />
+    <Content Include="Layouts\JobPortal\font-awesome\css\font-awesome.css" />
+    <Content Include="Layouts\JobPortal\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Layouts\JobPortal\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Layouts\JobPortal\images\about.jpg" />
+    <Content Include="Layouts\JobPortal\images\banner-left.jpg" />
+    <Content Include="Layouts\JobPortal\images\bg-image.jpg" />
+    <Content Include="Layouts\JobPortal\images\blog-detail.jpg" />
+    <Content Include="Layouts\JobPortal\images\blog-page.jpg" />
+    <Content Include="Layouts\JobPortal\images\blog.jpg" />
+    <Content Include="Layouts\JobPortal\images\cmnt-pic.jpg" />
+    <Content Include="Layouts\JobPortal\images\employe-bg.jpg" />
+    <Content Include="Layouts\JobPortal\images\employe-big-img.jpg" />
+    <Content Include="Layouts\JobPortal\images\foot-logo.jpg" />
+    <Content Include="Layouts\JobPortal\images\foot-logo.png" />
+    <Content Include="Layouts\JobPortal\images\job-detail.jpg" />
+    <Content Include="Layouts\JobPortal\images\jobs.jpg" />
+    <Content Include="Layouts\JobPortal\images\l1.jpg" />
+    <Content Include="Layouts\JobPortal\images\l2.jpg" />
+    <Content Include="Layouts\JobPortal\images\l3.jpg" />
+    <Content Include="Layouts\JobPortal\images\l4.jpg" />
+    <Content Include="Layouts\JobPortal\images\l5.jpg" />
+    <Content Include="Layouts\JobPortal\images\logo-4.png" />
+    <Content Include="Layouts\JobPortal\images\logo.png" />
+    <Content Include="Layouts\JobPortal\images\logo1.png" />
+    <Content Include="Layouts\JobPortal\images\offer-banner.jpg" />
+    <Content Include="Layouts\JobPortal\images\pic.jpg" />
+    <Content Include="Layouts\JobPortal\images\slider-1.jpg" />
+    <Content Include="Layouts\JobPortal\images\support-image.jpg" />
+    <Content Include="Layouts\JobPortal\images\testi-bg.jpg" />
+    <Content Include="Layouts\JobPortal\images\thumb.jpg" />
+    <Content Include="Layouts\JobPortal\js\dist\css\bootstrap-select.css" />
+    <Content Include="Layouts\JobPortal\js\dist\css\bootstrap-select.min.css" />
+    <Content Include="Layouts\JobPortal\js\dist\js\bootstrap-select.js" />
+    <Content Include="Layouts\JobPortal\js\dist\js\bootstrap-select.min.js" />
+    <Content Include="Layouts\JobPortal\js\internal.js" />
+    <Content Include="Layouts\JobPortal\js\jquery.2.1.1.min.js" />
+    <Content Include="Layouts\JobPortal\js\jquery.min.js" />
+    <Content Include="Layouts\JobPortal\js\owl-carousel\AjaxLoader.gif" />
+    <Content Include="Layouts\JobPortal\js\owl-carousel\grabbing.png" />
+    <Content Include="Layouts\JobPortal\js\owl-carousel\owl.carousel.css" />
+    <Content Include="Layouts\JobPortal\js\owl-carousel\owl.carousel.js" />
+    <Content Include="Layouts\JobPortal\js\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Layouts\JobPortal\js\owl-carousel\owl.theme.css" />
+    <Content Include="Layouts\JobPortal\js\owl-carousel\owl.transitions.css" />
+    <Content Include="Layouts\JobPortal\react\public\header.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\src\header.js" />
+    <Content Include="Layouts\JobPortal\react\webpack.config.js" />
+    <Content Include="MasterPage\Elements.xml" />
+    <None Include="MasterPage\JobPortal.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArtDevWebPart\ArtDevWebPart.csproj">
+      <Project>{17dd71aa-3159-4ae8-a432-62966ce05efa}</Project>
+      <Name>ArtDevWebPart</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <PropertyGroup>
+    <PreBuildEvent>cd C:\Users\Administrator\source\repos\artemov-dev\SharePoint2016\JobPortal\Layouts\JobPortal\react
+npm run build</PreBuildEvent>
+  </PropertyGroup>
+</Project>

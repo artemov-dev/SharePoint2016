@@ -4,7 +4,8 @@ module.exports = {
     mode: 'development',
     entry: {
                
-        newsCSR: './src/NewsCsr'
+        CSRAnonceView: './src/CSRAnonceView',
+        MainPage1: './src/MainPage1'
     },
     output: {
         path: path.resolve(__dirname, './public'),     

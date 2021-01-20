@@ -7,7 +7,7 @@
           <webParts>
             <webPart xmlns="http://schemas.microsoft.com/WebPart/v3" >
               <metaData>
-                <type name="ArtDevWebPart.JavaScriptBundle.JavaScriptBundle" />
+                <type name="ArtDevWebPart.JSBundleReact.JSBundleReact" />
                 <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
               </metaData>
             <data>
@@ -17,10 +17,10 @@
                 <property name="JSBundleFile" type="string">/_layouts/15/CSRReactForms/public/MainPage.bundle.js</property>
               </properties>
             </data>
-          </webPart>          
+          </webPart>                  
         </webParts>
         ]]>
-      </AllUsersWebPart>
+      </AllUsersWebPart>     
     </File>
   </Module>
 </Elements>

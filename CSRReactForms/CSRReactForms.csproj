@@ -62,7 +62,6 @@
     <Compile Include="Features\CSRReactForm\CSRReactForm.EventReceiver.cs">
       <DependentUpon>CSRReactForm.feature</DependentUpon>
     </Compile>
-    <Compile Include="LoggingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +81,7 @@
     <None Include="key.snk" />
     <None Include="Layouts\CSRReactForms\package-lock.json" />
     <None Include="Layouts\CSRReactForms\package.json" />
+    <None Include="Layouts\CSRReactForms\public\CSRAnonceView.bundle.js.map" />
     <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-0-467ee27f.woff" />
     <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-1-4d521695.woff" />
     <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-10-c4ded8e4.woff" />
@@ -101,7 +101,7 @@
     <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-8-6fdf1528.woff" />
     <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-9-c6162b42.woff" />
     <None Include="Layouts\CSRReactForms\public\fluenticons\fabric-icons-a13498cf.woff" />
-    <None Include="Layouts\CSRReactForms\public\newsCSR.bundle.js.map" />
+    <None Include="Layouts\CSRReactForms\public\MainPage1.bundle.js.map" />
     <None Include="Layouts\CSRReactForms\tsconfig.json" />
     <None Include="Layouts\CSRReactForms\tslint.json" />
     <None Include="Layouts\SharePointProjectItem.spdata">
@@ -126,9 +126,10 @@
       <DependentUpon>CSRReactForm.feature</DependentUpon>
     </Content>
     <Content Include="JavaScriptGlobal\Elements.xml" />
-    <Content Include="Layouts\CSRReactForms\public\newsCSR.bundle.js" />
+    <Content Include="Layouts\CSRReactForms\public\CSRAnonceView.bundle.js" />
+    <Content Include="Layouts\CSRReactForms\public\MainPage1.bundle.js" />
     <Content Include="Layouts\CSRReactForms\src\CSR.js" />
-    <Content Include="Layouts\CSRReactForms\src\NewsCsr.js" />
+    <Content Include="Layouts\CSRReactForms\src\CSRAnonceView.js" />
     <Content Include="Layouts\CSRReactForms\webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +138,12 @@
     <TypeScriptCompile Include="Layouts\CSRReactForms\src\controls\ControlTab.tsx" />
     <TypeScriptCompile Include="Layouts\CSRReactForms\src\controls\ControlText.tsx" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ArtDevWebPart\ArtDevWebPart.csproj">
+      <Project>{dcd882f3-1ecc-4934-9baa-f47b8a64e126}</Project>
+      <Name>ArtDevWebPart</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

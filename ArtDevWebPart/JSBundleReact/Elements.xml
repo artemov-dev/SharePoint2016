@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
   <Module Name="JSBundleReact" List="113" Url="_catalogs/wp">
-    <File Path="JSBundleReact\JSBundleReact.webpart" Url="ArtDevWebPart_JSBundleReact.webpart" Type="GhostableInLibrary" >
+    <File Path="JSBundleReact\JSBundleReact.webpart" Url="ArtDevWebPart_JSBundleReact.webpart" Type="GhostableInLibrary">
       <Property Name="Group" Value="ArtDev" />
     </File>
   </Module>

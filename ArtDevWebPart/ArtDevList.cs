@@ -12,6 +12,8 @@ namespace ArtDev
    
     public class ArtDevList
     {
+        public bool mode;
+        public bool FirstDeploy;
         public SPField Field;
         public SPListItem Item;
         public List<ArtDevContentType> artDevContentTypes;
@@ -114,7 +116,7 @@ namespace ArtDev
 
         public ArtDevList SetFieldRequired(bool condition)
         {
-            this.Field.Required = true;
+            this.Field.Required = condition;
             this.Field.Update();
             return this;
         }
@@ -179,21 +181,25 @@ namespace ArtDev
             return this;
         }
 
-        public ArtDevList AddItem(params string[] Values)
+        public ArtDevList AddItemIfModeDevOrFirstDeploy(params string[] Values)
         {
-            SPListItem sPListItem = this.list.Items.Add();          
-            int i = 0;            
-            Values.ToList<string>().ForEach(value => {
-                
-                string Name = this.sPFields[i].InternalName;
-                sPListItem[Name] = value;
-                i++;
-            });
-            sPListItem.Update();
+            if ((string)this.list.ParentWeb.AllProperties["DEV"] == "true" || this.FirstDeploy )
+            {
+                SPListItem sPListItem = this.list.Items.Add();
+                int i = 0;
+                Values.ToList<string>().ForEach(value =>
+                {
+
+                    string Name = this.sPFields[i].InternalName;
+                    sPListItem[Name] = value;
+                    i++;
+                });
+                sPListItem.Update();
+            }
             return this;
         }
 
-        public ArtDevList AddItemIfNotExsist(params string[] Values)
+        public ArtDevList AddItemIfTitleNotExsist(params string[] Values)
         {
             this.GetItem(SPBuiltInFieldId.Title, Values[0]);
             if (this.Item == null)
@@ -211,7 +217,7 @@ namespace ArtDev
             return this;
         }
 
-        public ArtDevList AddOrUpdateItemIfNotExsist(params string[] Values)
+        public ArtDevList AddOrUpdateItemIfTitleNotExsist(params string[] Values)
         {
             this.GetItem(SPBuiltInFieldId.Title, Values[0]);
             if (this.Item == null)
@@ -243,7 +249,7 @@ namespace ArtDev
             return this;
         }
 
-        public ArtDevList AddOrUpdateItem(params string[] Values)
+        public ArtDevList AddOrUpdateItem (params string[] Values)
         {
             this.GetItem(SPBuiltInFieldId.Title, Values[0]);
             if (this.Item == null)
@@ -292,6 +298,42 @@ namespace ArtDev
             }
 
             file.CheckIn("Added JSLink to the Form");
+            return this;
+        }
+
+        public ArtDevList ClearItemsIfModeDev()
+        {
+            if((string)this.list.ParentWeb.AllProperties["DEV"] == "true")
+            {
+                if (this.list.BaseType == SPBaseType.GenericList)
+                {
+                    SPListItemCollection coll = this.list.Items;
+
+                    foreach (SPListItem listitem in coll)
+                    {
+                        SPListItem itemToDelete = this.list.GetItemById(listitem.ID);
+                        itemToDelete.Recycle();
+                    }
+                }
+
+                if (this.list.BaseType == SPBaseType.DocumentLibrary)
+                {
+                    string libURL = this.list.ParentWeb.Url + "/" + this.list.RootFolder.Url;
+                    SPFolderCollection folders = this.list.ParentWeb.Folders[libURL].SubFolders;
+
+                    foreach (SPFolder folder in folders)
+                    {
+                        if (!folder.Name.Contains("Forms"))
+                        {
+                            SPListItem itemToDelete = this.list.GetItemById(folder.Item.ID);
+                            itemToDelete.Recycle();
+                        }
+                    }
+                }
+
+            }
+
+
             return this;
         }
     }

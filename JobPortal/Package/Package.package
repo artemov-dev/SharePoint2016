@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="cb38ef1d-eff1-41e2-839b-3eec82885a90" solutionId="cb38ef1d-eff1-41e2-839b-3eec82885a90" resetWebServer="false" sharePointProductVersion="16.0" name="JobPortal" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="fab69f23-e5ce-4d59-b299-7d0fd7b80e18" projectPath="..\ArtDevWebPart\ArtDevWebPart.csproj" />
+    <featureReference itemId="0777d838-0bb9-4fdc-a3b2-59d36f57c482" />
+    <featureReference itemId="1be3dc62-ce21-4a3b-b1db-537ded29a295" />
+    <featureReference itemId="b1fd8437-b028-4b5c-befb-10e1f415c075" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="acebfd81-2647-4a96-b2f9-c03b3af59caf" />
+  </projectItems>
+</package>

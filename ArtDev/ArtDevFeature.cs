@@ -261,17 +261,37 @@ namespace ArtDev
             return ListInstance;
         }
 
-        public void MDSDisable()
+        public ArtDevFeature MDSDisable()
         {
             try
             {
-                SPFeature feature = web.Features.First(f => f.Definition.DisplayName.Equals("MDSFeature"));
-                web.Features.Remove(feature.DefinitionId);
+                SPFeature feature = this.web.Features.First(f => f.Definition.DisplayName.Equals("MDSFeature"));
+                this.web.Features.Remove(feature.DefinitionId);
             }
             catch (Exception ex)
             {
                 
             }
+            return this;
+        }
+
+        public ArtDevFeature ActivateMasterPage(string Url)
+        {
+            try
+            {
+                SPSecurity.RunWithElevatedPrivileges(delegate
+
+                {
+                    this.web.AllowUnsafeUpdates = true;
+                    this.web.MasterUrl = Url;
+                    this.web.CustomMasterUrl = Url;
+                    this.web.Update();
+                    this.web.AllowUnsafeUpdates = false;
+                    this.web.Update();
+                });
+            }
+            catch(Exception ex) { }
+            return this;
         }
 
     }

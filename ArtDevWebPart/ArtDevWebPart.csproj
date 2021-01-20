@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DCD882F3-1ECC-4934-9BAA-F47B8A64E126}</ProjectGuid>
+    <ProjectGuid>{17DD71AA-3159-4AE8-A432-62966CE05EFA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ArtDevWebPart</RootNamespace>
@@ -43,13 +43,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.SharePoint" />
@@ -60,41 +57,30 @@
     <Compile Include="ArtDevFeature.cs" />
     <Compile Include="ArtDevField.cs" />
     <Compile Include="ArtDevList.cs" />
-    <Compile Include="JSBundleReact\JSBundleReact.ascx.cs">
-      <DependentUpon>JSBundleReact.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="JSBundleReact\JSBundleReact.ascx.g.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>JSBundleReact.ascx</DependentUpon>
-    </Compile>
+    <Compile Include="JSBundleReact\JSBundleReact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\SiteFeature\SiteFeature.feature">
-      <FeatureId>{25b66fd4-3432-4317-98a1-74a7ca3681fa}</FeatureId>
+    <None Include="Features\JSBundleReact\JSBundleReact.feature">
+      <FeatureId>{fab69f23-e5ce-4d59-b299-7d0fd7b80e18}</FeatureId>
     </None>
     <None Include="JSBundleReact\JSBundleReact.webpart" />
     <None Include="JSBundleReact\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{7cfd3a2d-793c-4985-a468-72410aa8cead}</SharePointProjectItemId>
+      <SharePointProjectItemId>{4454bcc8-09c0-4eb4-a4da-05fd7b7b2b0e}</SharePointProjectItemId>
     </None>
     <None Include="key.snk" />
     <None Include="Package\Package.package">
-      <PackageId>{73875761-193f-4f45-9fcd-8512b04d026d}</PackageId>
+      <PackageId>{ca6fb4ab-4d40-448a-95fc-c3561daa5b05}</PackageId>
     </None>
     <None Include="Package\Package.Template.xml">
       <DependentUpon>Package.package</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Features\SiteFeature\SiteFeature.Template.xml">
-      <DependentUpon>SiteFeature.feature</DependentUpon>
+    <Content Include="Features\JSBundleReact\JSBundleReact.Template.xml">
+      <DependentUpon>JSBundleReact.feature</DependentUpon>
     </Content>
     <Content Include="JSBundleReact\Elements.xml" />
-    <Content Include="JSBundleReact\JSBundleReact.ascx">
-      <Generator>SharePointWebPartCodeGenerator</Generator>
-      <LastGenOutput>JSBundleReact.ascx.g.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
