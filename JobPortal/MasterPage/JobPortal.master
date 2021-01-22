@@ -3,7 +3,8 @@
 <%@ Import Namespace="Microsoft.SharePoint.ApplicationPages" %>
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Register TagPrefix="wssuc" TagName="Welcome" src="~/_controltemplates/15/Welcome.ascx" %>
-<%@ Register Tagprefix="ArtDev" Namespace="ArtDevWebPart.JSBundleReact" Assembly="artdevwebpart, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f75bdce9f316ed9a" %>
+<%@ Register Tagprefix="ArtDevWebPart" Namespace="ArtDevWebPart.JSBundleReact" Assembly="artdevwebpart, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f75bdce9f316ed9a" %>
+<%@ Register Tagprefix="ArtDevControls" Namespace="ArtDev.Controls" Assembly="artdev, Version=1.0.0.0, Culture=neutral, PublicKeyToken=becb38b41279ca80" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -37,6 +38,8 @@
 	</SharePoint:AjaxDelta>
 	<SharePoint:CssRegistration Name="Themable/corev15.css" runat="server" />
 </head>
+
+<ArtDevControls:CSRDevLink runat="server" />
 
 <!-- Bootstrap stylesheet -->
 <link href="/_layouts/15/JobPortal/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -321,7 +324,7 @@
 
 <!-- header start here-->
 	
-	  <ArtDev:JSBundleReact runat="server" JSBundleFile="/_layouts/15/JobPortal/react/public/header.bundle.js" ReactRootElement="header" />	
+	  <ArtDevWebPart:JSBundleReact runat="server" JSBundleFile="/_layouts/15/JobPortal/react/public/header.bundle.js" ReactRootElement="header" />	
 	
 <!-- header end here -->
 

@@ -55,7 +55,9 @@
     <Compile Include="ArtDevFeature.cs" />
     <Compile Include="ArtDevField.cs" />
     <Compile Include="ArtDevList.cs" />
-    <Compile Include="JSBundleReact.cs" />
+    <Compile Include="Controls\CSRDevLink.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

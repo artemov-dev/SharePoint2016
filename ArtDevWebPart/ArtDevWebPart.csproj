@@ -53,10 +53,6 @@
     <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtDevContentType.cs" />
-    <Compile Include="ArtDevFeature.cs" />
-    <Compile Include="ArtDevField.cs" />
-    <Compile Include="ArtDevList.cs" />
     <Compile Include="JSBundleReact\JSBundleReact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

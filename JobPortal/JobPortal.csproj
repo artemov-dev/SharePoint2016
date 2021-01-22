@@ -221,13 +221,13 @@
     <None Include="MasterPage\JobPortal.master" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ArtDevWebPart\ArtDevWebPart.csproj">
-      <Project>{17dd71aa-3159-4ae8-a432-62966ce05efa}</Project>
-      <Name>ArtDevWebPart</Name>
-    </ProjectReference>
+    <TypeScriptCompile Include="Layouts\JobPortal\react\src\Header\HeadEditPanel.tsx" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Layouts\JobPortal\react\src\Header\HeadEditPanel.tsx" />
+    <ProjectReference Include="..\ArtDev\ArtDev.csproj">
+      <Project>{76a2735d-d770-4980-840e-5933855f3d80}</Project>
+      <Name>ArtDev</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

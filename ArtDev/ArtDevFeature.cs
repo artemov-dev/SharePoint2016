@@ -11,10 +11,10 @@ namespace ArtDev
     {
         private SPWeb web = null;
 
-
         private SPSite site = null;
         private string columnGroup = "ArtDev";
         private string contentTypeGroup = "ArtDev Types";
+        private bool FirstDeploy = false;
 
 
         public ArtDevFeature(SPFeatureReceiverProperties properties)
@@ -48,7 +48,7 @@ namespace ArtDev
         public ArtDevList CreateDocumentLibrary(string Name)
         {            
             SPList Document = NewOrRefLibrary(Name);
-            ArtDevList ArtDevDocument = new ArtDevList(Document);            
+            ArtDevList ArtDevDocument = new ArtDevList(Document);
             return ArtDevDocument;
 
         }
@@ -57,6 +57,7 @@ namespace ArtDev
         {
             SPList list = NewOrRefList(Name);
             ArtDevList ArtDevList = new ArtDevList(list);
+            ArtDevList.FirstDeploy = this.FirstDeploy;
             return ArtDevList;
 
         }
@@ -72,6 +73,13 @@ namespace ArtDev
         public ArtDevField CreateFieldCurrency(string Name)
         {
             SPFieldCurrency Field = NewOrRefCurrency(Name);
+            ArtDevField ArtDevField = new ArtDevField(Field);
+            return ArtDevField;
+        }
+
+        public ArtDevField CreateFieldNumber(string Name)
+        {
+            SPField Field = NewOrRefNumber(Name);
             ArtDevField ArtDevField = new ArtDevField(Field);
             return ArtDevField;
         }
@@ -111,6 +119,13 @@ namespace ArtDev
             return ArtDevField;
         }
 
+        public ArtDevField CreateFieldUrl(string Name)
+        {
+            SPFieldUrl Field = NewOrRefURL(Name);
+            ArtDevField ArtDevField = new ArtDevField(Field);
+            return ArtDevField;
+        }
+
         public ArtDevField CreateFieldLookup(string Name, string ListUrl, string WebUrl = null)
         {
             SPList list = null; SPFieldLookup Field = null;
@@ -142,7 +157,13 @@ namespace ArtDev
             return ArtDevType;
         }
 
-
+        public SPFieldNumber NewOrRefNumber(string Name)
+        {
+            string NumberName = this.Web().Fields.ContainsField(Name) ? Name : this.Web().Fields.Add(Name, SPFieldType.Number, false);
+            SPFieldNumber NumberField = (SPFieldNumber)this.Web().Fields.GetFieldByInternalName(NumberName);
+            NumberField.Group = this.columnGroup;
+            return NumberField;
+        }
         public SPFieldCurrency NewOrRefCurrency(string Name)
         {
             string CurrencyName = this.Web().Fields.ContainsField(Name) ? Name : this.Web().Fields.Add(Name, SPFieldType.Currency, false);
@@ -235,7 +256,8 @@ namespace ArtDev
         {
             SPList list = this.Web().Lists.Cast<SPList>().FirstOrDefault(c => c.EntityTypeName.Equals(Name+"List")) ?? null;
             //SPList list = GetSPList(Name + "List");
-            if (list == null) { Guid id = this.Web().Lists.Add(Name, null, SPListTemplateType.GenericList); list = this.Web().Lists[id];  }
+            if (list == null) { Guid id = this.Web().Lists.Add(Name, null, SPListTemplateType.GenericList); list = this.Web().Lists[id]; this.FirstDeploy = true;  }
+            else { this.FirstDeploy = false;  }
             list.ContentTypesEnabled = true; 
             list.Update();
             return list;            
@@ -245,7 +267,7 @@ namespace ArtDev
         {
             SPList Document = this.Web().Lists.Cast<SPList>().FirstOrDefault(c => c.EntityTypeName.Equals(Name)) ?? null; 
             //SPList Document = GetSPList(Name);
-            if (Document == null) { this.Web().Lists.Add(Name, null, SPListTemplateType.DocumentLibrary); Document = this.Web().Lists[Name]; }            
+            if (Document == null) { this.Web().Lists.Add(Name, null, SPListTemplateType.DocumentLibrary); Document = this.Web().Lists[Name];  }            
             Document.ContentTypesEnabled = true;
             Document.Update();
             return Document;
@@ -265,7 +287,8 @@ namespace ArtDev
         {
             try
             {
-                SPFeature feature = this.web.Features.First(f => f.Definition.DisplayName.Equals("MDSFeature"));
+                SPWeb web = this.Web();
+                SPFeature feature = web.Features.First(f => f.Definition.DisplayName.Equals("MDSFeature"));
                 this.web.Features.Remove(feature.DefinitionId);
             }
             catch (Exception ex)
@@ -282,15 +305,25 @@ namespace ArtDev
                 SPSecurity.RunWithElevatedPrivileges(delegate
 
                 {
-                    this.web.AllowUnsafeUpdates = true;
-                    this.web.MasterUrl = Url;
-                    this.web.CustomMasterUrl = Url;
-                    this.web.Update();
-                    this.web.AllowUnsafeUpdates = false;
-                    this.web.Update();
+                    SPWeb web = this.Web();
+                    web.AllowUnsafeUpdates = true;
+                    web.MasterUrl = Url;
+                    web.CustomMasterUrl = Url;
+                    web.Update();
+                    web.AllowUnsafeUpdates = false;
+                    web.Update();
                 });
             }
             catch(Exception ex) { }
+            return this;
+        }
+
+        public ArtDevFeature SetHomePage(string url)
+        {
+            SPWeb web = this.Web();
+            SPFolder rootFolder = web.RootFolder;
+            rootFolder.WelcomePage = url;
+            rootFolder.Update();
             return this;
         }
 

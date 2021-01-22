@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="cb38ef1d-eff1-41e2-839b-3eec82885a90" solutionId="cb38ef1d-eff1-41e2-839b-3eec82885a90" resetWebServer="false" sharePointProductVersion="16.0" name="JobPortal" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="ArtDev.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\ArtDev\ArtDev.csproj">
+      <safeControls>
+        <safeControl assemblyName="artdev, Version=1.0.0.0, Culture=neutral, PublicKeyToken=becb38b41279ca80" namespaceName="ArtDev.Controls" typeName="*" isSafeAgainstScript="false" />
+      </safeControls>
+    </projectOutputAssembly>
+  </assemblies>
   <features>
     <featureReference itemId="fab69f23-e5ce-4d59-b299-7d0fd7b80e18" projectPath="..\ArtDevWebPart\ArtDevWebPart.csproj" />
     <featureReference itemId="0777d838-0bb9-4fdc-a3b2-59d36f57c482" />
