@@ -372,31 +372,31 @@ export const SPServices = (function () {
 
     function isInEditMode() {
 
-        return new Promise(function (resolve) {
-            ExecuteOrDelayUntilScriptLoaded(function () {
-                var InEditMode = SP.Ribbon.PageState.Handlers.isInEditMode();
-                if (InEditMode) { resolve( true ) }
-                else { resolve ( false ) }
-            }, 'SP.Ribbon.js');
-        })
+        var inDesignMode = document.forms[MSOWebPartPageFormName].MSOLayout_InDesignMode;
+        inDesignMode = inDesignMode == undefined ? null : document.forms[MSOWebPartPageFormName].MSOLayout_InDesignMode.value;
+        if (inDesignMode == "1") {return true; }
+        var wikiInEditMode = document.forms[MSOWebPartPageFormName]._wikiPageMode;
+        wikiInEditMode = wikiInEditMode == undefined ? null : document.forms[MSOWebPartPageFormName]._wikiPageMode.value;
+        if (wikiInEditMode == "Edit") {return true;}         
+        else {return false;}
     }
 
     function OpenModalDialog(strPageURL) {
-            var dialogOptions = SP.UI.$create_DialogOptions();  
-            dialogOptions.url = strPageURL; // URL of the Page  
-            // Width of the Dialog  
-            dialogOptions.width = 800;  
-            // Height of the Dialog  
-            dialogOptions.height = 630;  
-            // Function to capture dialog closed event  
-            //dialogReturnValueCallback - A function pointer that specifies the return callback function. The function takes two parameters, a dialogResult of type SP.UI.DialogResult Enumeration and a returnValue of type object that contains any data returned by the dialog.  
-            //dialogOptions.dialogReturnValueCallback = Function.createDelegate(null, CloseCallback);  
-            // Open the Dialog  
-            SP.UI.ModalDialog.showModalDialog(dialogOptions);  
-            return false;
-    
-          
-    }  
+        var dialogOptions = SP.UI.$create_DialogOptions();
+        dialogOptions.url = strPageURL; // URL of the Page  
+        // Width of the Dialog  
+        //dialogOptions.width = 800;
+        // Height of the Dialog  
+        //dialogOptions.height = 630;
+        // Function to capture dialog closed event  
+        //dialogReturnValueCallback - A function pointer that specifies the return callback function. The function takes two parameters, a dialogResult of type SP.UI.DialogResult Enumeration and a returnValue of type object that contains any data returned by the dialog.  
+        //dialogOptions.dialogReturnValueCallback = Function.createDelegate(null, CloseCallback);  
+        // Open the Dialog  
+        SP.UI.ModalDialog.showModalDialog(dialogOptions);
+        return false;
+
+
+    }
 
 
 

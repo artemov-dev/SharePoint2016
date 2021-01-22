@@ -14,7 +14,7 @@
               <properties>
                 <property name="Title" type="string">ArtDevWebPart - MainPage</property>
                 <property name="ReactRootElement" type="string">MainPage</property>
-                <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/public/MainPage.bundle.js</property>
+                <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/react/public/MainPage.bundle.js</property>
               </properties>
             </data>
           </webPart>                  

@@ -121,6 +121,8 @@
     <None Include="Layouts\JobPortal\react\package-lock.json" />
     <None Include="Layouts\JobPortal\react\package.json" />
     <None Include="Layouts\JobPortal\react\public\header.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\MainPage.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\src\Header\Header.module.scss" />
     <None Include="Layouts\JobPortal\react\tsconfig.json" />
     <None Include="Layouts\JobPortal\react\tslint.json" />
     <None Include="Layouts\SharePointProjectItem.spdata">
@@ -161,7 +163,6 @@
     <Content Include="Layouts\JobPortal\bootstrap\js\bootstrap.js" />
     <Content Include="Layouts\JobPortal\bootstrap\js\bootstrap.min.js" />
     <Content Include="Layouts\JobPortal\bootstrap\js\npm.js" />
-    <Content Include="Layouts\JobPortal\css\fabric-icons-inline.css" />
     <Content Include="Layouts\JobPortal\css\style.css" />
     <Content Include="Layouts\JobPortal\font-awesome\css\font-awesome.css" />
     <Content Include="Layouts\JobPortal\font-awesome\css\font-awesome.min.css" />
@@ -207,8 +208,14 @@
     <Content Include="Layouts\JobPortal\js\owl-carousel\owl.carousel.min.js" />
     <Content Include="Layouts\JobPortal\js\owl-carousel\owl.theme.css" />
     <Content Include="Layouts\JobPortal\js\owl-carousel\owl.transitions.css" />
+    <Content Include="Layouts\JobPortal\react\babel.config.js" />
     <Content Include="Layouts\JobPortal\react\public\header.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\MainPage.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\src\ArtDevServices.js" />
     <Content Include="Layouts\JobPortal\react\src\header.js" />
+    <Content Include="Layouts\JobPortal\react\src\Header\HeadMenu.js" />
+    <Content Include="Layouts\JobPortal\react\src\Header\HeadMenuItem.js" />
+    <Content Include="Layouts\JobPortal\react\src\MainPage.js" />
     <Content Include="Layouts\JobPortal\react\webpack.config.js" />
     <Content Include="MasterPage\Elements.xml" />
     <None Include="MasterPage\JobPortal.master" />
@@ -219,7 +226,9 @@
       <Name>ArtDevWebPart</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <TypeScriptCompile Include="Layouts\JobPortal\react\src\Header\HeadEditPanel.tsx" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

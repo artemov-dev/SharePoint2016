@@ -1,37 +1,61 @@
 var path = require('path');
- 
+var webpack = require('webpack');
+
 module.exports = {
     mode: 'development',
     entry: {
-               
-        header: './src/header'
+
+        header: './src/header',
+        MainPage: './src/MainPage'
     },
     output: {
-        path: path.resolve(__dirname, './public'),     
+        path: path.resolve(__dirname, './public'),
         publicPath: 'http://localhost:3000/public/',
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js'
     },
     devtool: "source-map",
+    resolve: {
+        // Add `.ts` and `.tsx` as a resolvable extension.
+        extensions: [".ts", ".tsx", ".js", ".css", ".scss"]
+    },
     module: {
         rules: [
             {
-                test: /\.(js|jsx)?$/, 
-                exclude: /node_modules/,  
-                loader: "babel-loader", 
-                options: {                    
-                    cacheDirectory: true,
-                    presets: ['@babel/preset-env', '@babel/preset-react', 
-                                {'plugins': ['@babel/plugin-proposal-class-properties', '@babel/plugin-syntax-dynamic-import']}]
-                }
+                test: /\.(js|jsx)?$/,
+                exclude: /node_modules/,
+                loader: "babel-loader"
+
             },
             {
                 test: /\.(ts|tsx)?$/,
                 exclude: /node_modules/,
-                loaders: ['babel-loader', 'ts-loader']                
+                loaders: ['babel-loader', 'ts-loader']
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                  "style-loader",
+                  "css-loader",
+                  {
+                    loader: "sass-loader",
+                    options: {
+                      // Prefer `dart-sass`
+                      implementation: require("sass"),
+                    },
+                  },
+                ],
             }
         ]
     },
+
+
+    plugins: [
+        new webpack.ProvidePlugin({
+            Promise: ['es6-promise', 'Promise']
+        })
+    ],
+
     devServer: {
         contentBase: '.',
         hot: true,
@@ -41,4 +65,6 @@ module.exports = {
         disableHostCheck: true,
         headers: { "Access-Control-Allow-Origin": "*" }
     }
+
+
 }
