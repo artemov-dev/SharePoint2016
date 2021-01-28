@@ -3,7 +3,6 @@
 <%@ Import Namespace="Microsoft.SharePoint.ApplicationPages" %>
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Register TagPrefix="wssuc" TagName="Welcome" src="~/_controltemplates/15/Welcome.ascx" %>
-<%@ Register Tagprefix="ArtDevWebPart" Namespace="ArtDevWebPart.JSBundleReact" Assembly="artdevwebpart, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f75bdce9f316ed9a" %>
 <%@ Register Tagprefix="ArtDevControls" Namespace="ArtDev.Controls" Assembly="artdev, Version=1.0.0.0, Culture=neutral, PublicKeyToken=becb38b41279ca80" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -37,7 +36,7 @@
 		<asp:ContentPlaceHolder id="PlaceHolderBodyAreaClass" Visible="true" runat="server" />
 	</SharePoint:AjaxDelta>
 	<SharePoint:CssRegistration Name="Themable/corev15.css" runat="server" />
-</head>
+
 
 <ArtDevControls:CSRDevLink runat="server" />
 
@@ -47,13 +46,15 @@
 <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700%7CSource+Sans+Pro:300,400,600,700" rel="stylesheet"> 
 <!-- stylesheet -->
 <link href="/_layouts/15/JobPortal/css/style.css" rel="stylesheet" type="text/css" />
+<!-- fix core15v -->
+<link href="/_layouts/15/JobPortal/css/corev15-fix.css" rel="stylesheet" type="text/css" />
 <!-- font-awesome -->
 <link href="/_layouts/15/JobPortal/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <!-- crousel css -->
 <link href="/_layouts/15/JobPortal/js/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
 <!--bootstrap select-->
 <link href="/_layouts/15/JobPortal/js/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
-
+</head>
 <body>
   <SharePoint:ImageLink runat="server"/>
   <SharePoint:SPNoScript runat="server"/>
@@ -324,7 +325,7 @@
 
 <!-- header start here-->
 	
-	  <ArtDevWebPart:JSBundleReact runat="server" JSBundleFile="/_layouts/15/JobPortal/react/public/header.bundle.js" ReactRootElement="header" />	
+	 
 	
 <!-- header end here -->
 

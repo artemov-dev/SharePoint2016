@@ -1,6 +1,4 @@
 import React from 'react'
-import { SPServices } from '../ArtDevServices'
-import classes from './Header.module'
 
 
 export const HeadMenuItem = (props) => {

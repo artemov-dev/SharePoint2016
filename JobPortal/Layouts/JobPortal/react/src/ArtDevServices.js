@@ -381,13 +381,13 @@ export const SPServices = (function () {
         else {return false;}
     }
 
-    function OpenModalDialog(strPageURL) {
+    function OpenModalDialog(strPageURL, width, height) {
         var dialogOptions = SP.UI.$create_DialogOptions();
-        dialogOptions.url = strPageURL; // URL of the Page  
+        dialogOptions.url = strPageURL; // URL of the Page               
         // Width of the Dialog  
-        //dialogOptions.width = 800;
+        dialogOptions.width = width;
         // Height of the Dialog  
-        //dialogOptions.height = 630;
+        dialogOptions.height = height;
         // Function to capture dialog closed event  
         //dialogReturnValueCallback - A function pointer that specifies the return callback function. The function takes two parameters, a dialogResult of type SP.UI.DialogResult Enumeration and a returnValue of type object that contains any data returned by the dialog.  
         //dialogOptions.dialogReturnValueCallback = Function.createDelegate(null, CloseCallback);  

@@ -1,0 +1,6 @@
+﻿.ms-dlgTitle {
+    white-space: nowrap;
+    cursor: move;
+    padding: 15px 35px 15px 15px;
+    overflow: hidden;
+}

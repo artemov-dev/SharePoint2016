@@ -10,11 +10,10 @@ export const HeadMenu = () => {
     const [items, setitems] = React.useState([])
     
       React.useEffect(() => {                      
-        SPServices.getJsomListItems("", "ArtDev меню", "<View Scope='RecursiveAll'><Query></Query></View>")
+        SPServices.getJsomListItems("", "ArtDev меню", "<View Scope='RecursiveAll'><Query><OrderBy><FieldRef Name='MenuOrderNumber' Ascending='TRUE' /></OrderBy></Query></View>")
          .then(data => setitems(data))               
     }, [])   
 
-    
   
     return (
         <div className="col-sm-6 col-md-6 col-xs-12 padd0">

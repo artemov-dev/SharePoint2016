@@ -3,10 +3,10 @@ var webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
-    entry: {
-
-        header: './src/header',
-        MainPage: './src/MainPage'
+    entry: {        
+        header: './src/Header/header',
+        headerForm: './src/Header/headerForm',
+        Slider: './src/Slider/Slider'
     },
     output: {
         path: path.resolve(__dirname, './public'),

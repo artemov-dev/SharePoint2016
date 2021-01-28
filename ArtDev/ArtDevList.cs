@@ -2,9 +2,8 @@
 using Microsoft.SharePoint.WebPartPages;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.UI.WebControls.WebParts;
 
 namespace ArtDev
@@ -276,6 +275,34 @@ namespace ArtDev
                 this.Item.Update();
             }
             return this;
+        }
+
+        public ArtDevList CreateListView(string Name, bool gridMode)
+        {           
+            
+            SPView view = this.list.Views.Cast<SPView>().FirstOrDefault(c => c.Title.Equals(Name));
+            if (view == null)
+            {
+                StringCollection viewFields = new StringCollection();
+                sPFields.ForEach((SPField field) =>
+                {
+                    viewFields.Add(field.InternalName);
+                });                
+                string strQuery = "";
+                this.list.Views.Add(Name, viewFields, strQuery, 30, true, false, gridMode ? SPViewCollection.SPViewType.Grid : SPViewCollection.SPViewType.Html, false);        
+                
+            }
+            else
+            {
+                view.ViewFields.DeleteAll();
+                sPFields.ForEach((SPField field) =>
+                {
+                    view.ViewFields.Add(field.InternalName);
+                });
+                view.Update();
+            }
+         this.list.Update();
+         return this;
         }
 
         public ArtDevList SetJSLinkView(string Url)

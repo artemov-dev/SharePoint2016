@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.SharePoint" />
@@ -59,6 +60,13 @@
     </Compile>
     <Compile Include="Features\MasterPage\MasterPage.EventReceiver.cs">
       <DependentUpon>MasterPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\JobPortal\pages\FormHeadEdit.aspx.cs">
+      <DependentUpon>FormHeadEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\JobPortal\pages\FormHeadEdit.aspx.designer.cs">
+      <DependentUpon>FormHeadEdit.aspx.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -120,9 +128,30 @@
     <None Include="Layouts\JobPortal\font-awesome\scss\_variables.scss" />
     <None Include="Layouts\JobPortal\react\package-lock.json" />
     <None Include="Layouts\JobPortal\react\package.json" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-0-467ee27f.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-1-4d521695.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-10-c4ded8e4.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-11-2a8393d6.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-12-7e945a1e.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-13-c3989a02.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-14-5cf58db8.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-15-3807251b.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-16-9cf93f3b.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-17-0c4ed701.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-2-63c99abf.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-3-089e217a.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-4-a656cc0a.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-5-f95ba260.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-6-ef6fd590.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-7-2b97bb99.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-8-6fdf1528.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-9-c6162b42.woff" />
+    <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-a13498cf.woff" />
     <None Include="Layouts\JobPortal\react\public\header.bundle.js.map" />
-    <None Include="Layouts\JobPortal\react\public\MainPage.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\headerForm.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\Slider.bundle.js.map" />
     <None Include="Layouts\JobPortal\react\src\Header\Header.module.scss" />
+    <None Include="Layouts\JobPortal\react\src\Header\headerEditPanel.scss" />
     <None Include="Layouts\JobPortal\react\tsconfig.json" />
     <None Include="Layouts\JobPortal\react\tslint.json" />
     <None Include="Layouts\SharePointProjectItem.spdata">
@@ -163,6 +192,7 @@
     <Content Include="Layouts\JobPortal\bootstrap\js\bootstrap.js" />
     <Content Include="Layouts\JobPortal\bootstrap\js\bootstrap.min.js" />
     <Content Include="Layouts\JobPortal\bootstrap\js\npm.js" />
+    <Content Include="Layouts\JobPortal\css\corev15-fix.css" />
     <Content Include="Layouts\JobPortal\css\style.css" />
     <Content Include="Layouts\JobPortal\font-awesome\css\font-awesome.css" />
     <Content Include="Layouts\JobPortal\font-awesome\css\font-awesome.min.css" />
@@ -208,14 +238,18 @@
     <Content Include="Layouts\JobPortal\js\owl-carousel\owl.carousel.min.js" />
     <Content Include="Layouts\JobPortal\js\owl-carousel\owl.theme.css" />
     <Content Include="Layouts\JobPortal\js\owl-carousel\owl.transitions.css" />
+    <Content Include="Layouts\JobPortal\pages\FormHeadEdit.aspx" />
     <Content Include="Layouts\JobPortal\react\babel.config.js" />
     <Content Include="Layouts\JobPortal\react\public\header.bundle.js" />
-    <Content Include="Layouts\JobPortal\react\public\MainPage.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\headerForm.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\Slider.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\src\ArtDevConstants.js" />
     <Content Include="Layouts\JobPortal\react\src\ArtDevServices.js" />
-    <Content Include="Layouts\JobPortal\react\src\header.js" />
+    <Content Include="Layouts\JobPortal\react\src\Header\header.js" />
+    <Content Include="Layouts\JobPortal\react\src\Header\headerForm.js" />
     <Content Include="Layouts\JobPortal\react\src\Header\HeadMenu.js" />
     <Content Include="Layouts\JobPortal\react\src\Header\HeadMenuItem.js" />
-    <Content Include="Layouts\JobPortal\react\src\MainPage.js" />
+    <Content Include="Layouts\JobPortal\react\src\Slider\Slider.js" />
     <Content Include="Layouts\JobPortal\react\webpack.config.js" />
     <Content Include="MasterPage\Elements.xml" />
     <None Include="MasterPage\JobPortal.master" />
@@ -236,7 +270,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup>
-    <PreBuildEvent>cd C:\Users\Administrator\source\repos\artemov-dev\SharePoint2016\JobPortal\Layouts\JobPortal\react
+    <PreBuildEvent>cd ../../Layouts/JobPortal/react/
 npm run build</PreBuildEvent>
   </PropertyGroup>
 </Project>

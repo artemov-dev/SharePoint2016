@@ -2,6 +2,25 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="ArtDevPages" Url="ArtDevPages" List="101">
     <File Path="ArtDevPages\MainPages.aspx" Url="MainPages.aspx" IgnoreIfAlreadyExists="FALSE" ReplaceContent="TRUE" Type="GhostableInLibrary">
+      <AllUsersWebPart WebPartZoneID="Header" WebPartOrder="0">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3" >
+              <metaData>
+                <type name="ArtDevWebPart.JSBundleReact.JSBundleReact" />
+                <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+              </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">ArtDevWebPart - Header</property>
+                <property name="ReactRootElement" type="string">header</property>
+                <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/react/public/header.bundle.js</property>
+              </properties>
+            </data>
+          </webPart>                  
+        </webParts>
+        ]]>
+      </AllUsersWebPart>
       <AllUsersWebPart WebPartZoneID="MainPage" WebPartOrder="0">
         <![CDATA[
           <webParts>
