@@ -9,7 +9,7 @@
 
      </ZoneTemplate>
  </WebPartPages:WebPartZone>
- <WebPartPages:WebPartZone runat="server" ID="MainPage" Title="loc:MainPage">
+ <WebPartPages:WebPartZone runat="server" ID="Slider" Title="loc:Slider">
      <ZoneTemplate>
 
      </ZoneTemplate>

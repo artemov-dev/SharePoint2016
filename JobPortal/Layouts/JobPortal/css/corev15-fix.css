@@ -4,3 +4,19 @@
     padding: 15px 35px 15px 15px;
     overflow: hidden;
 }
+
+#contentRow {
+     padding-top: 0; 
+}
+
+
+.ms-webpartzone-cell {
+    margin: 0;
+}
+
+#contentBox {
+    margin-right: 0;
+    margin-left: 0;
+    min-width: 0;
+}
+

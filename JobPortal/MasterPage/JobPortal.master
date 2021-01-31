@@ -570,7 +570,7 @@
 	</asp:ContentPlaceHolder>
   </SharePoint:AjaxDelta>
 </div>
-<div id="contentBox" style="margin-left:20px"
+<div id="contentBox"
  aria-live="polite" aria-relevant="all"  role="main">
   <div id="notificationArea" class="ms-notif-box"></div>
 	<SharePoint:AjaxDelta id="DeltaPageStatusBar" BlockElement="true" runat="server">
@@ -622,5 +622,16 @@
 	<SharePoint:ScriptBlock runat="server">
 		var g_Workspace = "s4-workspace";
 	</SharePoint:ScriptBlock>
+
+
+	
+<script src="/_layouts/15/JobPortal/js/jquery.2.1.1.min.js" type="text/javascript"></script>
+<!-- bootstrap js -->
+<script src="/_layouts/15/JobPortal/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<!--bootstrap select-->
+<script src="/_layouts/15/JobPortal/js/dist/js/bootstrap-select.js" type="text/javascript"></script>
+<!-- owlcarousel js -->
+<script src="/_layouts/15/JobPortal/js/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+
 </body>
 </SharePoint:SPHtmlTag>

@@ -31,9 +31,9 @@
               </metaData>
             <data>
               <properties>
-                <property name="Title" type="string">ArtDevWebPart - MainPage</property>
-                <property name="ReactRootElement" type="string">MainPage</property>
-                <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/react/public/MainPage.bundle.js</property>
+                <property name="Title" type="string">ArtDevWebPart - Slider</property>
+                <property name="ReactRootElement" type="string">Slider</property>
+                <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/react/public/Slider.bundle.js</property>
               </properties>
             </data>
           </webPart>                  
