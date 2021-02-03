@@ -83,9 +83,6 @@
     <None Include="Features\MasterPage\MasterPage.feature">
       <FeatureId>{b1fd8437-b028-4b5c-befb-10e1f415c075}</FeatureId>
     </None>
-    <None Include="JavaScriptGlobal\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{2cbbded5-6e0c-4000-b4b4-a70ff3ed35ac}</SharePointProjectItemId>
-    </None>
     <None Include="key.snk" />
     <None Include="Layouts\JobPortal\bootstrap\css\bootstrap-theme.css.map" />
     <None Include="Layouts\JobPortal\bootstrap\css\bootstrap.css.map" />
@@ -128,6 +125,11 @@
     <None Include="Layouts\JobPortal\font-awesome\scss\_variables.scss" />
     <None Include="Layouts\JobPortal\react\package-lock.json" />
     <None Include="Layouts\JobPortal\react\package.json" />
+    <None Include="Layouts\JobPortal\react\public\Blog.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\Footer.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\Partner.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\Browse.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\Featured.bundle.js.map" />
     <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-0-467ee27f.woff" />
     <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-1-4d521695.woff" />
     <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-10-c4ded8e4.woff" />
@@ -149,9 +151,16 @@
     <None Include="Layouts\JobPortal\react\public\fluenticons\fabric-icons-a13498cf.woff" />
     <None Include="Layouts\JobPortal\react\public\header.bundle.js.map" />
     <None Include="Layouts\JobPortal\react\public\headerForm.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\Latest.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\owlCarousel.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\runtime.bundle.js.map" />
     <None Include="Layouts\JobPortal\react\public\Slider.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\Testimonial.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\Top.bundle.js.map" />
+    <None Include="Layouts\JobPortal\react\public\vendors.bundle.js.map" />
     <None Include="Layouts\JobPortal\react\src\Header\Header.module.scss" />
     <None Include="Layouts\JobPortal\react\src\Header\headerEditPanel.scss" />
+    <None Include="Layouts\JobPortal\react\src\Slider\Slider.scss" />
     <None Include="Layouts\JobPortal\react\tsconfig.json" />
     <None Include="Layouts\JobPortal\react\tslint.json" />
     <None Include="Layouts\SharePointProjectItem.spdata">
@@ -179,7 +188,6 @@
     <Content Include="Features\MasterPage\MasterPage.Template.xml">
       <DependentUpon>MasterPage.feature</DependentUpon>
     </Content>
-    <Content Include="JavaScriptGlobal\Elements.xml" />
     <Content Include="Layouts\JobPortal\bootstrap\css\bootstrap-select.css" />
     <Content Include="Layouts\JobPortal\bootstrap\css\bootstrap-select.min.css" />
     <Content Include="Layouts\JobPortal\bootstrap\css\bootstrap-theme.css" />
@@ -240,16 +248,39 @@
     <Content Include="Layouts\JobPortal\js\owl-carousel\owl.transitions.css" />
     <Content Include="Layouts\JobPortal\pages\FormHeadEdit.aspx" />
     <Content Include="Layouts\JobPortal\react\babel.config.js" />
+    <Content Include="Layouts\JobPortal\react\public\Blog.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\Footer.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\Partner.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\Browse.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\Featured.bundle.js" />
     <Content Include="Layouts\JobPortal\react\public\header.bundle.js" />
     <Content Include="Layouts\JobPortal\react\public\headerForm.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\Latest.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\owlCarousel.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\runtime.bundle.js" />
     <Content Include="Layouts\JobPortal\react\public\Slider.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\Testimonial.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\Top.bundle.js" />
+    <Content Include="Layouts\JobPortal\react\public\vendors.bundle.js" />
     <Content Include="Layouts\JobPortal\react\src\ArtDevConstants.js" />
     <Content Include="Layouts\JobPortal\react\src\ArtDevServices.js" />
+    <Content Include="Layouts\JobPortal\react\src\Blog\Blog.js" />
+    <Content Include="Layouts\JobPortal\react\src\Browse\Browse.js" />
+    <Content Include="Layouts\JobPortal\react\src\Featured\Featured.js" />
+    <Content Include="Layouts\JobPortal\react\src\Footer\Footer.js" />
     <Content Include="Layouts\JobPortal\react\src\Header\header.js" />
     <Content Include="Layouts\JobPortal\react\src\Header\headerForm.js" />
     <Content Include="Layouts\JobPortal\react\src\Header\HeadMenu.js" />
     <Content Include="Layouts\JobPortal\react\src\Header\HeadMenuItem.js" />
+    <Content Include="Layouts\JobPortal\react\src\Latest\Latest.js" />
+    <Content Include="Layouts\JobPortal\react\src\owlCarousel\bootstrap-select.js" />
+    <Content Include="Layouts\JobPortal\react\src\owlCarousel\bootstrap.min.js" />
+    <Content Include="Layouts\JobPortal\react\src\owlCarousel\owl.carousel.min.js" />
+    <Content Include="Layouts\JobPortal\react\src\owlCarousel\owlCarousel.js" />
+    <Content Include="Layouts\JobPortal\react\src\Partner\Partner.js" />
     <Content Include="Layouts\JobPortal\react\src\Slider\Slider.js" />
+    <Content Include="Layouts\JobPortal\react\src\Testimonial\Testimonial.js" />
+    <Content Include="Layouts\JobPortal\react\src\Top\Top.js" />
     <Content Include="Layouts\JobPortal\react\webpack.config.js" />
     <Content Include="MasterPage\Elements.xml" />
     <None Include="MasterPage\JobPortal.master" />

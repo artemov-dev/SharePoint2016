@@ -20,6 +20,8 @@
     min-width: 0;
 }
 
-input {
-    min-width: 0
+
+.ms-fullscreenmode #contentBox {
+    margin-left: 0px;
 }
+

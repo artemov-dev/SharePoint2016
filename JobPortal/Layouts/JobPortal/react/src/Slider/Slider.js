@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import WindowSizeHook from './WindowSizehook';
+import WindowSizeHook from '../owlCarousel/WindowSizeHook';
+import './Slider.scss'
+
 
 
 
@@ -9,18 +11,10 @@ import WindowSizeHook from './WindowSizehook';
 
 
 const Slider = () => { 
-    
-    React.useEffect(() => {
-                 
-         const script = document.createElement('script');
-         script.src = '/_layouts/15/JobPortal/js/internal.js';          
-         document.body.appendChild(script);
+ 
 
-    }, [])
-    
-    
     return (
-        <div style={{width: WindowSizeHook().width }} >
+         <div style={{width: WindowSizeHook().width }} > 
             {/* <!-- slider start here --> */}
             <div className="slideshow owl-carousel">           
                 <div className="item">
@@ -48,9 +42,9 @@ const Slider = () => {
                                 </div>
                                 <div className="col-md-4 col-sm-4 col-xs-12 paddright">
                                     <div className="input-group">
-                                        <input name="s" className="form-control" value="" onChange={()=>{}} placeholder="Search" type="text" />
+                                        <input name="s" className="form-control" value="" onChange={()=>{window.open("jobs.aspx", "_self")}} placeholder="Search" type="text" />
                                         <span>
-                                            <button type="submit" className="btnsrch" onClick={()=>{}} ><i className="fa fa-search"></i></button>
+                                            <button type="submit" className="btnsrch" onClick={()=>{window.open("jobs.aspx", "_self")}} ><i className="fa fa-search"></i></button>
                                         </span>
                                     </div>
                                 </div>
@@ -87,9 +81,9 @@ const Slider = () => {
                                 </div>
                                 <div className="col-md-4 col-sm-4 col-xs-12 paddright">
                                     <div className="input-group">
-                                        <input name="s" className="form-control" value="" onChange={()=>{}} placeholder="Search" type="text" />
+                                        <input name="s" className="form-control" value="" onChange={()=>{window.open("jobs.aspx", "_self")}} placeholder="Search" type="text" />
                                         <span>
-                                            <button type="submit" className="btnsrch" onClick={()=>{}} ><i className="fa fa-search"></i></button>
+                                            <button type="submit" className="btnsrch" onClick={()=>{window.open("jobs.aspx", "_self")}} ><i className="fa fa-search"></i></button>
                                         </span>
                                     </div>
                                 </div>
@@ -126,9 +120,9 @@ const Slider = () => {
                                 </div>
                                 <div className="col-md-4 col-sm-4 col-xs-12 paddright">
                                     <div className="input-group">
-                                        <input name="s" className="form-control" value="" onChange={()=>{}} placeholder="Search" type="text" />
+                                        <input name="s" className="form-control" value="" onChange={()=>{window.open("jobs.aspx", "_self")}} placeholder="Search" type="text" />
                                         <span>
-                                            <button type="submit" className="btnsrch" onClick={()=>{}} ><i className="fa fa-search"></i></button>
+                                            <button type="submit" className="btnsrch" onClick={()=>{window.open("jobs.aspx", "_self")}} ><i className="fa fa-search"></i></button>
                                         </span>
                                     </div> 
                                 </div>
@@ -165,9 +159,9 @@ const Slider = () => {
                                 </div>
                                 <div className="col-md-4 col-sm-4 col-xs-12 paddright">
                                     <div className="input-group">
-                                        <input name="s" className="form-control" value="" onChange={()=>{}} placeholder="Search" type="text" />
+                                        <input name="s" className="form-control" value="" onChange={()=>{window.open("jobs.aspx", "_self")}} placeholder="Search" type="text" />
                                         <span>
-                                            <button type="submit" className="btnsrch" onClick={()=>{}}><i className="fa fa-search"></i></button>
+                                            <button type="submit" className="btnsrch" onClick={()=>{window.open("jobs.aspx", "_self")}}><i className="fa fa-search"></i></button>
                                         </span>
                                     </div>
                                 </div>

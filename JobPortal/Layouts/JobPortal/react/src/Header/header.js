@@ -11,8 +11,18 @@ function Header() {
 
 	React.useEffect(() => {
 		setEditMode(SPServices.isInEditMode());
+		
+		window.addEventListener('unload',function() {
+            SetFullScreenMode(false);
+        });
+         
+        window.addEventListener('load',function() {
+            SetFullScreenMode(true);
+		});
+
 	}, [])
 
+	
 
 
 

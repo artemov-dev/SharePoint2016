@@ -1,12 +1,42 @@
 var path = require('path');
 var webpack = require('webpack');
 
+const isProd = process.env.NODE_ENV === 'production '
+
+const optimization = isProd ? {
+    runtimeChunk: 'single',
+
+    splitChunks: {
+        chunks: 'all',
+
+        cacheGroups: {
+            vendors: {
+                test: /[\\/]node_modules[\\/]/,                    
+                name: 'vendors',
+                enforce: true,
+                chunks: 'all'
+            }
+        }
+    }
+} : {}
+
+
+
 module.exports = {
     mode: 'development',
     entry: {        
+        Top: './src/Top/Top',
         header: './src/Header/header',
         headerForm: './src/Header/headerForm',
-        Slider: './src/Slider/Slider'
+        Slider: './src/Slider/Slider',
+        Featured: './src/Featured/Featured',
+        Testimonial: './src/Testimonial/Testimonial',
+        Browse: './src/Browse/Browse',
+        Latest: './src/Latest/Latest',
+        Partner: './src/Partner/Partner',
+        Blog: './src/Blog/Blog',
+        Footer: './src/Footer/Footer',
+        owlCarousel: './src/owlCarousel/owlCarousel'
     },
     output: {
         path: path.resolve(__dirname, './public'),
@@ -53,8 +83,15 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({
             Promise: ['es6-promise', 'Promise']
-        })
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+          })
     ],
+
+    optimization: optimization,
+    
 
     devServer: {
         contentBase: '.',

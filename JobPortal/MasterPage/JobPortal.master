@@ -4,6 +4,7 @@
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Register TagPrefix="wssuc" TagName="Welcome" src="~/_controltemplates/15/Welcome.ascx" %>
 <%@ Register Tagprefix="ArtDevControls" Namespace="ArtDev.Controls" Assembly="artdev, Version=1.0.0.0, Culture=neutral, PublicKeyToken=becb38b41279ca80" %>
+<%@ Register Tagprefix="ArtDevWebPart" Namespace="ArtDevWebPart.JSBundleReact" Assembly="artdevwebpart, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f75bdce9f316ed9a" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -38,7 +39,7 @@
 	<SharePoint:CssRegistration Name="Themable/corev15.css" runat="server" />
 
 
-<ArtDevControls:CSRDevLink runat="server" />
+
 
 <!-- Bootstrap stylesheet -->
 <link href="/_layouts/15/JobPortal/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -54,8 +55,25 @@
 <link href="/_layouts/15/JobPortal/js/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
 <!--bootstrap select-->
 <link href="/_layouts/15/JobPortal/js/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+
+
+
+<ArtDevControls:CSRDevLink runat="server" />
+<ArtDevControls:JSBundleChunk runat="server" JSBundleFile="/_layouts/15/JobPortal/react/public/runtime.bundle.js" />
+<ArtDevControls:JSBundleChunk runat="server" JSBundleFile="/_layouts/15/JobPortal/react/public/vendors.bundle.js" />
+<ArtDevControls:JSBundleStartUp runat="server" JSBundleFile="/_layouts/15/JobPortal/react/public/owlCarousel.bundle.js" />
+
+
+
+
 </head>
 <body>
+
+
+
+
+<ArtDevWebPart:JSBundleReact runat="server" JSBundleFile="/_layouts/15/JobPortal/react/public/Top.bundle.js" ReactRootElement="Top" />
+
   <SharePoint:ImageLink runat="server"/>
   <SharePoint:SPNoScript runat="server"/>
   <SharePoint:SPClientIDGenerator runat="server" ServerControlID="DeltaPlaceHolderMain;DeltaPlaceHolderPageTitleInTitleArea;DeltaPlaceHolderUtilityContent" />
@@ -192,6 +210,8 @@
 	<SharePoint:DelegateControl id="ID_SuiteBarDelegate" ControlId="SuiteBarDelegate" runat="server" />
 </SharePoint:AjaxDelta>
 		<div id="ms-hcTest"></div>
+
+
 		<div id="s4-ribbonrow">
 		<div id="globalNavBox" class="noindex">
 	<div id="ribbonBox">
@@ -237,7 +257,7 @@
 			HoverOffsetX="125"
 			HoverOffsetY="178"
 			NavigateUrl="#"
-			onclick="SetFullScreenMode(true);PreventDefaultNavigation();return false;"
+			onclick="SetFullScreenMode(true);PreventDefaultNavigation();document.getElementById('Top').style.display = 'block';return false;"
 			AlternateText="<%$Resources:wss,multipages_fullscreenmodelinkalt_text%>"
 			ToolTip="<%$Resources:wss,multipages_fullscreenmodelinkalt_text%>"
 			/>
@@ -262,11 +282,12 @@
 			HoverOffsetX="179"
 			HoverOffsetY="96"
 			NavigateUrl="#"
-			onclick="SetFullScreenMode(false);PreventDefaultNavigation();return false;"
+			onclick="SetFullScreenMode(false);PreventDefaultNavigation();document.getElementById('Top').style.display = 'none';return false;"
 			AlternateText="<%$Resources:wss,multipages_fullscreenmodelinkalt_text%>"
 			ToolTip="<%$Resources:wss,multipages_fullscreenmodelinkalt_text%>"
 			/>
 	</span>
+	
 </span>
 <SharePoint:DeveloperDashboard runat="server" />
 <SharePoint:DeveloperDashboardLauncher
@@ -624,14 +645,6 @@
 	</SharePoint:ScriptBlock>
 
 
-	
-<script src="/_layouts/15/JobPortal/js/jquery.2.1.1.min.js" type="text/javascript"></script>
-<!-- bootstrap js -->
-<script src="/_layouts/15/JobPortal/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<!--bootstrap select-->
-<script src="/_layouts/15/JobPortal/js/dist/js/bootstrap-select.js" type="text/javascript"></script>
-<!-- owlcarousel js -->
-<script src="/_layouts/15/JobPortal/js/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
 
 </body>
 </SharePoint:SPHtmlTag>

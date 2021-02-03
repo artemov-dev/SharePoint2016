@@ -14,4 +14,48 @@
 
      </ZoneTemplate>
  </WebPartPages:WebPartZone>
+
+    <WebPartPages:WebPartZone runat="server" ID="Featured" Title="loc:Featured">
+     <ZoneTemplate>
+
+     </ZoneTemplate>
+ </WebPartPages:WebPartZone>
+
+    <WebPartPages:WebPartZone runat="server" ID="Browse" Title="loc:Browse">
+     <ZoneTemplate>
+
+     </ZoneTemplate>
+ </WebPartPages:WebPartZone>
+    
+
+<WebPartPages:WebPartZone runat="server" ID="Testimonial" Title="loc:Testimonial">
+     <ZoneTemplate>
+
+     </ZoneTemplate>
+ </WebPartPages:WebPartZone>
+
+<WebPartPages:WebPartZone runat="server" ID="Blog" Title="loc:Blog">
+     <ZoneTemplate>
+
+     </ZoneTemplate>
+ </WebPartPages:WebPartZone>
+
+<WebPartPages:WebPartZone runat="server" ID="Latest" Title="loc:Latest">
+     <ZoneTemplate>
+
+     </ZoneTemplate>
+ </WebPartPages:WebPartZone>
+
+<WebPartPages:WebPartZone runat="server" ID="Partner" Title="loc:Partner">
+     <ZoneTemplate>
+
+     </ZoneTemplate>
+ </WebPartPages:WebPartZone>
+
+<WebPartPages:WebPartZone runat="server" ID="Footer" Title="loc:Footer">
+     <ZoneTemplate>
+
+     </ZoneTemplate>
+ </WebPartPages:WebPartZone>
+
 </asp:Content>

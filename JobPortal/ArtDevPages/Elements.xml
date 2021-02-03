@@ -21,7 +21,7 @@
         </webParts>
         ]]>
       </AllUsersWebPart>
-      <AllUsersWebPart WebPartZoneID="MainPage" WebPartOrder="0">
+      <AllUsersWebPart WebPartZoneID="Slider" WebPartOrder="0">
         <![CDATA[
           <webParts>
             <webPart xmlns="http://schemas.microsoft.com/WebPart/v3" >
@@ -34,6 +34,139 @@
                 <property name="Title" type="string">ArtDevWebPart - Slider</property>
                 <property name="ReactRootElement" type="string">Slider</property>
                 <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/react/public/Slider.bundle.js</property>
+              </properties>
+            </data>
+          </webPart>                  
+        </webParts>
+        ]]>
+      </AllUsersWebPart>
+      <AllUsersWebPart WebPartZoneID="Browse" WebPartOrder="0">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3" >
+              <metaData>
+                <type name="ArtDevWebPart.JSBundleReact.JSBundleReact" />
+                <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+              </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">ArtDevWebPart - Browse</property>
+                <property name="ReactRootElement" type="string">browse</property>
+                <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/react/public/Browse.bundle.js</property>
+              </properties>
+            </data>
+          </webPart>                  
+        </webParts>
+        ]]>
+      </AllUsersWebPart>
+      <AllUsersWebPart WebPartZoneID="Featured" WebPartOrder="0">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3" >
+              <metaData>
+                <type name="ArtDevWebPart.JSBundleReact.JSBundleReact" />
+                <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+              </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">ArtDevWebPart - Featured</property>
+                <property name="ReactRootElement" type="string">featured</property>
+                <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/react/public/Featured.bundle.js</property>
+              </properties>
+            </data>
+          </webPart>                  
+        </webParts>
+        ]]>
+      </AllUsersWebPart>
+      <AllUsersWebPart WebPartZoneID="Testimonial" WebPartOrder="0">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3" >
+              <metaData>
+                <type name="ArtDevWebPart.JSBundleReact.JSBundleReact" />
+                <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+              </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">ArtDevWebPart - Testimonial</property>
+                <property name="ReactRootElement" type="string">testimonial</property>
+                <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/react/public/Testimonial.bundle.js</property>
+              </properties>
+            </data>
+          </webPart>                  
+        </webParts>
+        ]]>
+      </AllUsersWebPart>
+      <AllUsersWebPart WebPartZoneID="Blog" WebPartOrder="0">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3" >
+              <metaData>
+                <type name="ArtDevWebPart.JSBundleReact.JSBundleReact" />
+                <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+              </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">ArtDevWebPart - Blog</property>
+                <property name="ReactRootElement" type="string">blog</property>
+                <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/react/public/Blog.bundle.js</property>
+              </properties>
+            </data>
+          </webPart>                  
+        </webParts>
+        ]]>
+      </AllUsersWebPart>
+      <AllUsersWebPart WebPartZoneID="Latest" WebPartOrder="0">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3" >
+              <metaData>
+                <type name="ArtDevWebPart.JSBundleReact.JSBundleReact" />
+                <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+              </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">ArtDevWebPart - Latest</property>
+                <property name="ReactRootElement" type="string">latest</property>
+                <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/react/public/Latest.bundle.js</property>
+              </properties>
+            </data>
+          </webPart>                  
+        </webParts>
+        ]]>
+      </AllUsersWebPart>
+      <AllUsersWebPart WebPartZoneID="Partner" WebPartOrder="0">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3" >
+              <metaData>
+                <type name="ArtDevWebPart.JSBundleReact.JSBundleReact" />
+                <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+              </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">ArtDevWebPart - Partner</property>
+                <property name="ReactRootElement" type="string">partner</property>
+                <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/react/public/Partner.bundle.js</property>
+              </properties>
+            </data>
+          </webPart>                  
+        </webParts>
+        ]]>
+      </AllUsersWebPart>
+      <AllUsersWebPart WebPartZoneID="Footer" WebPartOrder="0">
+        <![CDATA[
+          <webParts>
+            <webPart xmlns="http://schemas.microsoft.com/WebPart/v3" >
+              <metaData>
+                <type name="ArtDevWebPart.JSBundleReact.JSBundleReact" />
+                <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+              </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">ArtDevWebPart - Footer</property>
+                <property name="ReactRootElement" type="string">footer</property>
+                <property name="JSBundleFile" type="string">/_layouts/15/JobPortal/react/public/Footer.bundle.js</property>
               </properties>
             </data>
           </webPart>                  
