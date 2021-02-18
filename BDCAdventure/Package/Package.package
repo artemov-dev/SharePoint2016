@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="578642f0-309e-45a2-9841-801eb5d70ebb" solutionId="578642f0-309e-45a2-9841-801eb5d70ebb" resetWebServer="false" sharePointProductVersion="16.0" name="BDCAdventure" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="6b434cb8-f6f5-4f07-bae2-f6aaa3e032db" />
+  </features>
+</package>

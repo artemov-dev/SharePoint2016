@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<minimalLanguageDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BdcAdventure">
+  <modelRootMoniker Name="/BdcAdventure" />
+  <nestedChildShapes>
+    <entityShape Id="c0406759-8d55-41cf-8110-c611dc58bcd8" absoluteBounds="7, 2.5, 1.5, 1.5956835937499996">
+      <entityMoniker name="BDCAdventure.BdcAdventure.Adventure" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1bf89890-4176-4412-9cb3-22ef4fd26060" absoluteBounds="7.015, 2.91, 1.4700000000000002, 0.44169108072916663" name="Identifiers" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="27662d47-9329-4739-969e-7e072618073b" absoluteBounds="7.015, 3.3616910807291669, 1.4700000000000002, 0.63399251302083326" name="Methods" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+  </nestedChildShapes>
+</minimalLanguageDiagram>

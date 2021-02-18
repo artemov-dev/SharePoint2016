@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/windows/2007/BusinessDataCatalog" Name="BdcAdventure">
+  <LobSystems>
+    <LobSystem Name="BdcAdventure" Type="DotNetAssembly">
+      <LobSystemInstances>
+        <LobSystemInstance Name="BdcAdventure">
+          <Properties>
+            <Property Name="ShowInSearchUI" Type="System.Boolean">true</Property>
+          </Properties></LobSystemInstance>
+      </LobSystemInstances>
+      <Entities>
+        <Entity Name="Adventure" Namespace="BDCAdventure.BdcAdventure" Version="1.0.0.32">
+          <Properties>
+            <Property Name="Class" Type="System.String">BDCAdventure.BdcAdventure.AdventureService, BdcAdventure</Property>
+          </Properties>
+          <Identifiers>
+            <Identifier Name="BusinessEntityID" TypeName="System.Int32" />
+          </Identifiers>
+          <Methods>
+            <Method Name="ReadItem">
+              <Parameters>
+                <Parameter Name="adventure" Direction="Return">
+                  <TypeDescriptor Name="Adventure" TypeName="BDCAdventure.vEmployee, BdcAdventure" IsCollection="false">
+                    <TypeDescriptors>
+                      <TypeDescriptor Name="BusinessEntityID" TypeName="System.Int32" IsCollection="false" IdentifierName="BusinessEntityID" />
+                      <TypeDescriptor Name="Title" TypeName="System.String" />
+                      <TypeDescriptor Name="FirstName" TypeName="System.String" />
+                      <TypeDescriptor Name="MiddleName" TypeName="System.String" />
+                      <TypeDescriptor Name="LastName" TypeName="System.String" />
+                      <TypeDescriptor Name="Suffix" TypeName="System.String" />
+                      <TypeDescriptor Name="JobTitle" TypeName="System.String" />
+                      <TypeDescriptor Name="PhoneNumber" TypeName="System.String" />
+                      <TypeDescriptor Name="EmailAddress" TypeName="System.String" /></TypeDescriptors></TypeDescriptor></Parameter>
+                <Parameter Name="businessEntityID" Direction="In">
+                  <TypeDescriptor Name="BusinessEntityID" TypeName="System.Int32" IdentifierEntityName="Adventure" IdentifierEntityNamespace="BDCAdventure.BdcAdventure" IdentifierName="BusinessEntityID" /></Parameter>
+              </Parameters>
+              <MethodInstances>
+                <MethodInstance Name="ReadItem" Type="SpecificFinder" ReturnParameterName="adventure" ReturnTypeDescriptorPath="Adventure" />
+              </MethodInstances></Method>
+            <Method Name="ReadList">
+              <Parameters>
+                <Parameter Name="adventureList" Direction="Return">
+                  <TypeDescriptor Name="AdventureList" TypeName="System.Collections.Generic.IEnumerable`1[[BDCAdventure.vEmployee, BdcAdventure]]" IsCollection="true">
+                    <TypeDescriptors>
+                      <TypeDescriptor Name="Adventure" IsCollection="false" TypeName="BDCAdventure.vEmployee, BdcAdventure">
+                        <TypeDescriptors>
+                          <TypeDescriptor Name="BusinessEntityID" IdentifierName="BusinessEntityID" IsCollection="false" TypeName="System.Int32" />
+                          <TypeDescriptor Name="Title" TypeName="System.String" />
+                          <TypeDescriptor Name="FirstName" TypeName="System.String" />
+                          <TypeDescriptor Name="MiddleName" TypeName="System.String" />
+                          <TypeDescriptor Name="LastName" TypeName="System.String" />
+                          <TypeDescriptor Name="Suffix" TypeName="System.String" />
+                          <TypeDescriptor Name="JobTitle" TypeName="System.String" />
+                          <TypeDescriptor Name="PhoneNumber" TypeName="System.String" />
+                          <TypeDescriptor Name="EmailAddress" TypeName="System.String" /></TypeDescriptors></TypeDescriptor></TypeDescriptors></TypeDescriptor></Parameter>
+              </Parameters>
+              <MethodInstances>
+                <MethodInstance Name="ReadList" Type="Finder" ReturnParameterName="adventureList" ReturnTypeDescriptorPath="AdventureList" />
+              </MethodInstances></Method>
+          </Methods></Entity>
+      </Entities>
+    </LobSystem>
+  </LobSystems>
+</Model>

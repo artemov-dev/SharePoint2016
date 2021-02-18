@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.BusinessDataConnectivity" DefaultFile="BdcAdventure.bdcm" FeatureReceiverClass="Microsoft.Office.SharePoint.ClientExtensions.Deployment.ImportModelReceiver" FeatureReceiverAssembly="Microsoft.Office.SharePoint.ClientExtensions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Farm" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="BdcAdventure.bdcm" Target="BdcAdventure\" Type="ElementFile" />
+    <ProjectOutputFile ProjectId="7a05045e-7aa6-484e-9c8f-4447f1dac28b" ProjectPath="BDCAdventure.csproj" Target="BdcAssemblies\" Type="ElementFile" />
+  </Files>
+  <FeatureProperties>
+    <FeatureProperty Key="BdcAdventure" Value="BdcAssemblies\$SharePoint.Project.AssemblyFileName$" />
+    <FeatureProperty Key="IncrementalUpdate" Value="true" />
+    <FeatureProperty Key="ModelFileName" Value="$SharePoint.ProjectItem.Name$\BdcAdventure.bdcm" />
+  </FeatureProperties>
+</ProjectItem>
