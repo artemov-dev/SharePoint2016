@@ -158,7 +158,6 @@
     <None Include="Layouts\JobPortal\react\public\Testimonial.bundle.js.map" />
     <None Include="Layouts\JobPortal\react\public\Top.bundle.js.map" />
     <None Include="Layouts\JobPortal\react\public\vendors.bundle.js.map" />
-    <None Include="Layouts\JobPortal\react\src\Header\Header.module.scss" />
     <None Include="Layouts\JobPortal\react\src\Header\headerEditPanel.scss" />
     <None Include="Layouts\JobPortal\react\src\Slider\Slider.scss" />
     <None Include="Layouts\JobPortal\react\tsconfig.json" />

@@ -13,7 +13,7 @@ const Footer = () => {
                             <form name="subscribe">
                                 <div className="form-group">
                                     <div className="input-group">
-                                        <input type="text" placeholder="Enter your Email Address" id="subscribe_email1" name="subscribe_email" value="" className="form-control" />
+                                        <input type="text" placeholder="Enter your Email Address" id="subscribe_email1" name="subscribe_email" value="" onChange={()=>{}} className="form-control" />
                                         <div className="input-group-btn">
                                             <button className="btn btn-default btn-lg" type="submit"><i className="fa fa-paper-plane-o" aria-hidden="true"></i> SUBSCRIBE</button>
                                         </div>
@@ -109,17 +109,17 @@ const Footer = () => {
                                 <fieldset>
                                     <div className="form-group">
                                         <div className="col-sm-12">
-                                            <input className="form-control" id="input-username" placeholder="Name" value="" name="email" required="" type="text" />
+                                            <input className="form-control" id="input-username" placeholder="Name" value="" onChange={()=>{}} name="email" required="" type="text" />
                                         </div>
                                     </div>
                                     <div className="form-group">
                                         <div className="col-sm-12">
-                                            <input className="form-control" id="input-email" placeholder="Email Address" value="" name="email" required="" type="text" />
+                                            <input className="form-control" id="input-email" placeholder="Email Address" value="" onChange={()=>{}} name="email" required="" type="text" />
                                         </div>
                                     </div>
                                     <div className="form-group">
                                         <div className="input-group col-sm-12">
-                                            <input type="text" placeholder="Message" id="message" name="message" value="" className="form-control big" />
+                                            <input type="text" placeholder="Message" id="message" name="message" value="" onChange={()=>{}} className="form-control big" />
                                             <div className="input-group-btn">
                                                 <button className="btn btn-default btn-lg" type="submit"><i className="fa fa-paper-plane-o" aria-hidden="true"></i></button>
                                             </div>

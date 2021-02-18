@@ -3,20 +3,13 @@ import ReactDOM from 'react-dom'
 import WindowSizeHook from '../owlCarousel/WindowSizeHook';
 import './Slider.scss'
 
+const Slider = () => {
 
-
-
-
-
-
-
-const Slider = () => { 
- 
 
     return (
-         <div style={{width: WindowSizeHook().width }} > 
+        <div style={{ width: WindowSizeHook().width }} >
             {/* <!-- slider start here --> */}
-            <div className="slideshow owl-carousel">           
+            <div className="slideshow owl-carousel">
                 <div className="item">
                     <img src="/_layouts/15/JobPortal/images/slider-1.jpg" alt="slider" title="slider" className="img-responsive" />
                     <div className="slide-detail">
@@ -42,14 +35,14 @@ const Slider = () => {
                                 </div>
                                 <div className="col-md-4 col-sm-4 col-xs-12 paddright">
                                     <div className="input-group">
-                                        <input name="s" className="form-control" value="" onChange={()=>{window.open("jobs.aspx", "_self")}} placeholder="Search" type="text" />
+                                        <input name="s" className="form-control" value="" placeholder="Search" type="text" onChange={()=>{}} />
                                         <span>
-                                            <button type="submit" className="btnsrch" onClick={()=>{window.open("jobs.aspx", "_self")}} ><i className="fa fa-search"></i></button>
+                                            <button type="submit" className="btnsrch" onClick={()=>{}}><i className="fa fa-search"></i></button>
                                         </span>
                                     </div>
                                 </div>
                                 <div className="center">
-                                    <button className="btn-default">ADVANCE JOB SEARCH <i className="fa fa-plus-square-o" aria-hidden="true"></i>
+                                    <button className="btn-default">ADVANCE JOB SEARCH <i className="fa fa-plus-square-o" aria-hidden="true" onClick={()=>{}}></i>
                                     </button>
                                 </div>
                             </div>
@@ -81,14 +74,14 @@ const Slider = () => {
                                 </div>
                                 <div className="col-md-4 col-sm-4 col-xs-12 paddright">
                                     <div className="input-group">
-                                        <input name="s" className="form-control" value="" onChange={()=>{window.open("jobs.aspx", "_self")}} placeholder="Search" type="text" />
+                                        <input name="s" className="form-control" value="" placeholder="Search" type="text" onChange={()=>{}} />
                                         <span>
-                                            <button type="submit" className="btnsrch" onClick={()=>{window.open("jobs.aspx", "_self")}} ><i className="fa fa-search"></i></button>
+                                            <button type="submit" className="btnsrch" onClick={()=>{}}><i className="fa fa-search"></i></button>
                                         </span>
                                     </div>
                                 </div>
                                 <div className="center">
-                                    <button className="btn-default">ADVANCE JOB SEARCH <i className="fa fa-plus-square-o" aria-hidden="true"></i>
+                                    <button className="btn-default">ADVANCE JOB SEARCH <i className="fa fa-plus-square-o" aria-hidden="true" onClick={()=>{}}></i>
                                     </button>
                                 </div>
                             </div>
@@ -120,14 +113,14 @@ const Slider = () => {
                                 </div>
                                 <div className="col-md-4 col-sm-4 col-xs-12 paddright">
                                     <div className="input-group">
-                                        <input name="s" className="form-control" value="" onChange={()=>{window.open("jobs.aspx", "_self")}} placeholder="Search" type="text" />
+                                        <input name="s" className="form-control" value="" placeholder="Search" type="text" onChange={()=>{}} />
                                         <span>
-                                            <button type="submit" className="btnsrch" onClick={()=>{window.open("jobs.aspx", "_self")}} ><i className="fa fa-search"></i></button>
+                                            <button type="submit" className="btnsrch" onClick={()=>{}}><i className="fa fa-search" ></i></button>
                                         </span>
-                                    </div> 
+                                    </div>
                                 </div>
                                 <div className="center">
-                                    <button className="btn-default">ADVANCE JOB SEARCH <i className="fa fa-plus-square-o" aria-hidden="true"></i>
+                                    <button className="btn-default">ADVANCE JOB SEARCH <i className="fa fa-plus-square-o" aria-hidden="true" onClick={()=>{}}></i>
                                     </button>
                                 </div>
                             </div>
@@ -159,14 +152,14 @@ const Slider = () => {
                                 </div>
                                 <div className="col-md-4 col-sm-4 col-xs-12 paddright">
                                     <div className="input-group">
-                                        <input name="s" className="form-control" value="" onChange={()=>{window.open("jobs.aspx", "_self")}} placeholder="Search" type="text" />
+                                        <input name="s" className="form-control" value="" placeholder="Search" type="text" onChange={()=>{}} />
                                         <span>
-                                            <button type="submit" className="btnsrch" onClick={()=>{window.open("jobs.aspx", "_self")}}><i className="fa fa-search"></i></button>
+                                            <button type="submit" className="btnsrch" onClick={()=>{}}><i className="fa fa-search"></i></button>
                                         </span>
                                     </div>
                                 </div>
                                 <div className="center">
-                                    <button className="btn-default">ADVANCE JOB SEARCH <i className="fa fa-plus-square-o" aria-hidden="true"></i>
+                                    <button className="btn-default">ADVANCE JOB SEARCH <i className="fa fa-plus-square-o" aria-hidden="true" onClick={()=>{}}></i>
                                     </button>
                                 </div>
                             </div>

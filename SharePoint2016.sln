@@ -50,6 +50,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobPortal", "JobPortal\JobP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArtDevWebPart", "ArtDevWebPart\ArtDevWebPart.csproj", "{17DD71AA-3159-4AE8-A432-62966CE05EFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDCAdventure", "BDCAdventure\BDCAdventure.csproj", "{7A05045E-7AA6-484E-9C8F-4447F1DAC28B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -156,6 +158,12 @@ Global
 		{17DD71AA-3159-4AE8-A432-62966CE05EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17DD71AA-3159-4AE8-A432-62966CE05EFA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{17DD71AA-3159-4AE8-A432-62966CE05EFA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7A05045E-7AA6-484E-9C8F-4447F1DAC28B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A05045E-7AA6-484E-9C8F-4447F1DAC28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A05045E-7AA6-484E-9C8F-4447F1DAC28B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7A05045E-7AA6-484E-9C8F-4447F1DAC28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A05045E-7AA6-484E-9C8F-4447F1DAC28B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A05045E-7AA6-484E-9C8F-4447F1DAC28B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

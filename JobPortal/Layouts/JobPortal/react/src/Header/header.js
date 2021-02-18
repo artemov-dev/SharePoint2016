@@ -1,67 +1,89 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { SPServices } from '../ArtDevServices'
 import { HeadMenu } from './HeadMenu'
-import classes from './Header.module'
+import { IconButton, Image, initializeIcons, Label, loadTheme, Panel, PanelType, Stack, Text } from 'office-ui-fabric-react';
+import { EditWrapper } from '../EditWrapper';
+import { Logo } from './Logo';
+
+loadTheme({
+	palette: {
+		themePrimary: '#ff9900',
+		themeLighterAlt: '#fffbf5',
+		themeLighter: '#ffefd6',
+		themeLight: '#ffe0b3',
+		themeTertiary: '#ffc266',
+		themeSecondary: '#ffa51f',
+		themeDarkAlt: '#e68a00',
+		themeDark: '#c27400',
+		themeDarker: '#8f5600',
+		neutralLighterAlt: '#f1f1f1',
+		neutralLighter: '#ededed',
+		neutralLight: '#e3e3e3',
+		neutralQuaternaryAlt: '#d3d3d3',
+		neutralQuaternary: '#cacaca',
+		neutralTertiaryAlt: '#c2c2c2',
+		neutralTertiary: '#a19f9d',
+		neutralSecondary: '#605e5c',
+		neutralPrimaryAlt: '#3b3a39',
+		neutralPrimary: '#323130',
+		neutralDark: '#201f1e',
+		black: '#000000',
+		white: '#f7f7f7',
+	},
+});
+
+initializeIcons('/_layouts/15/JobPortal/react/public/fluenticons/', { disableWarnings: true });
+
 
 
 function Header() {
-	const [EditMode, setEditMode] = React.useState(false)
-	const [MouseOver, setMouseOver] = React.useState(false)
 
-	React.useEffect(() => {
-		setEditMode(SPServices.isInEditMode());
-		
-		window.addEventListener('unload',function() {
-            SetFullScreenMode(false);
-        });
-         
-        window.addEventListener('load',function() {
-            SetFullScreenMode(true);
-		});
+	const [clickedLogo, setclickedLogo] = React.useState(false)
+	const [clickedSubmit, setclickedSubmit] = React.useState(false)
+	const [ImageSearch, setImageSearch] = React.useState(false)
 
-	}, [])
-
-	
-
-
-
+	const SubmitEditPanel = () => {
+		return (
+			<Panel
+				headerText="Submit Panel"
+				isOpen={clickedSubmit}
+				onDismiss={() => { setclickedSubmit(!clickedSubmit) }}
+				// You MUST provide this prop! Otherwise screen readers will just say "button" with no label.
+				closeButtonAriaLabel="Close"
+			>
+				<p>Content Submit.</p>
+			</Panel>
+		)
+	}
 
 	return (
-		<div className="ms-dialogHidden" onMouseOver={() => setMouseOver(true)} onMouseLeave={() => setMouseOver(false)}>
-			<header className={EditMode & MouseOver ? classes.borderShadow : null}>
+		<div className="ms-dialogHidden">
+			<header>
 				{/* <!-- header container start here--> */}
-
-				{(EditMode & MouseOver) ?
-					<div className={classes['ms-Icon'] + ' ' + classes['ms-Icon--Edit']}
-						onClick={() => { SPServices.OpenModalDialog('/Lists/ArtDevHeaderMenu/VewTable.aspx', 800, 800) }} >
-					</div> : null
-				}
-
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-3 col-md-3 col-xs-12">
 							{/* <!-- logo start here--> */}
-							<div id="logo">
-								<a href="/">
-									<img className="img-responsive logochange" alt="logo" title="logo" src="/_layouts/15/JobPortal/images/logo.png" />
-								</a>
-							</div>
+							<Logo />
 							{/* <!-- logo end here--> */}
 						</div>
 						<div className="col-sm-3 col-md-3 col-xs-12 visible-xs paddleft">
 							{/* <!-- button-login start here --> */}
-							<div className="button-login pull-right">
-								<button type="button" className="btn btn-primary btn-lg" onClick={() => console.log('Submit Button')}>Submit Job</button>
-							</div>
+							<EditWrapper >
+								<div className="button-login pull-right">
+									<button type="button" className="btn btn-primary btn-lg" onClick={() => console.log('Submit Button')}>Submit Job</button>
+								</div>
+							</EditWrapper>
 							{/* <!-- button-login end here --> */}
 						</div>
 						<HeadMenu />
 						<div className="col-sm-3 col-md-3 col-xs-12 hidden-xs">
 							{/* <!-- button-login start here --> */}
-							<div className="button-login pull-right">
-								<button type="button" className="btn btn-primary btn-lg" onClick={() => console.log('Submit Button')}>Submit Job</button>
-							</div>
+							<EditWrapper>
+								<div className="button-login pull-right">
+									<button type="button" className="btn btn-primary btn-lg" onClick={() => console.log('Submit Button')}>Submit Job</button>
+								</div>
+							</EditWrapper>
 							{/* <!-- button-login end here --> */}
 						</div>
 					</div>

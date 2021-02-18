@@ -1,10 +1,3 @@
-/* =============================================================
- Author			:	Artemov Aleksandr
- Create date	:	15.01.2021
- Description	:	Системные функции
- =============================================================== */
-
-
 
 export const SPServices = (function () {
 
@@ -140,47 +133,47 @@ export const SPServices = (function () {
 
     function getJsomListItems(webUrl, listTitle, camlQuery, params, pagingInfo) {
         // Возращаем promise чтобы снабдить функцию функционалом обещаний
-        return new Promise(function (resolve, reject) {
-            var context = SP.ClientContext.get_current();;//new SP.ClientContext(webUrl); TODO: не открывать контекст, если подходит текущий
-            var list = context.get_web().get_lists().getByTitle(listTitle);
-            var query = new SP.CamlQuery();
-            query.set_viewXml(camlQuery);
+        return new Promise(function (resolve, reject) {        
+                var context = SP.ClientContext.get_current();;//new SP.ClientContext(webUrl); TODO: не открывать контекст, если подходит текущий
+                var list = context.get_web().get_lists().getByTitle(listTitle);
+                var query = new SP.CamlQuery();
+                query.set_viewXml(camlQuery);
 
-            if (pagingInfo) {
-                var position = new SP.ListItemCollectionPosition();
-                position.set_pagingInfo(pagingInfo);
-                query.set_listItemCollectionPosition(position);
-            }
-
-            var listItems = list.getItems(query);
-            if (params) {
-                context.load(listItems, params);
-            } else {
-                context.load(listItems);
-            }
-
-            context.executeQueryAsync(function () {
-                // var items = [];
-                var enumerator = listItems.getEnumerator();
-
-                var promises = [];
-                while (enumerator.moveNext()) {
-                    var item = enumerator.get_current().get_fieldValues();
-                    jQuery.extend(item, { AttachmentFiles: [] });
-
-                    var promise = checkAttachments(context, enumerator, item);
-                    promises.push(promise);
+                if (pagingInfo) {
+                    var position = new SP.ListItemCollectionPosition();
+                    position.set_pagingInfo(pagingInfo);
+                    query.set_listItemCollectionPosition(position);
                 }
 
-                Promise.all(promises)
-                    .then(function (data) {
-                        resolve(data);
-                    });
+                var listItems = list.getItems(query);
+                if (params) {
+                    context.load(listItems, params);
+                } else {
+                    context.load(listItems);
+                }
 
-            }, function (sender, error) {
-                reject(error.get_message(), error.get_stackTrace());
-            });
-        });
+                context.executeQueryAsync(function () {
+                    // var items = [];
+                    var enumerator = listItems.getEnumerator();
+
+                    var promises = [];
+                    while (enumerator.moveNext()) {
+                        var item = enumerator.get_current().get_fieldValues();
+                        jQuery.extend(item, { AttachmentFiles: [] });
+
+                        var promise = checkAttachments(context, enumerator, item);
+                        promises.push(promise);
+                    }
+
+                    Promise.all(promises)
+                        .then(function (data) {
+                            resolve(data);
+                        });
+
+                }, function (sender, error) {
+                    reject(error.get_message(), error.get_stackTrace());
+                });
+            });       
     }
 
     function checkAttachments(context, enumerator, item) {
@@ -374,11 +367,11 @@ export const SPServices = (function () {
 
         var inDesignMode = document.forms[MSOWebPartPageFormName].MSOLayout_InDesignMode;
         inDesignMode = inDesignMode == undefined ? null : document.forms[MSOWebPartPageFormName].MSOLayout_InDesignMode.value;
-        if (inDesignMode == "1") {return true; }
+        if (inDesignMode == "1") { return true; }
         var wikiInEditMode = document.forms[MSOWebPartPageFormName]._wikiPageMode;
         wikiInEditMode = wikiInEditMode == undefined ? null : document.forms[MSOWebPartPageFormName]._wikiPageMode.value;
-        if (wikiInEditMode == "Edit") {return true;}         
-        else {return false;}
+        if (wikiInEditMode == "Edit") { return true; }
+        else { return false; }
     }
 
     function OpenModalDialog(strPageURL, width, height) {

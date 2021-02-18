@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "tslint:recommended",
-    "tslint-eslint-rules",
-    "tslint-react"
-  ],
+  "extends": "tslint:recommended",
   "jsRules": {
     "jsx-wrap-multiline": true,
     "jsx-alignment": true,

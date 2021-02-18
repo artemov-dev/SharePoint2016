@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="29889ead-dbe2-4cf9-8f61-95e43f77d83c" 
+        solutionId="29889ead-dbe2-4cf9-8f61-95e43f77d83c" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="BDCModel"
+        sharePointProductVersion="16.0">
+</package>

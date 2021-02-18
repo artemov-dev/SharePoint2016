@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Security.Cryptography;
 using System.IO;
+using Microsoft.SharePoint.Utilities;
 
 namespace ArtDevWebPart.JSBundleReact
 {
@@ -31,10 +32,12 @@ namespace ArtDevWebPart.JSBundleReact
 
         private string GetMD5Hash(string  filename)
         {
-            string hive = "C:\\Program Files\\Common Files\\microsoft shared\\Web Server Extensions\\16\\TEMPLATE";
+
+            
+            string hive = SPUtility.GetGenericSetupPath(string.Empty) + "TEMPLATE\\";
             using (var md5 = MD5.Create())
             {
-                filename = filename.Replace("/15/", "/").Replace("/_layouts/", "/layouts/");
+                filename = filename.Replace("/15/", "/").Replace("/14/", "/").Replace("/12/", "/").Replace("/_layouts/", "/layouts/");
                 try
                 {
                     using (var stream = File.OpenRead(hive + filename))

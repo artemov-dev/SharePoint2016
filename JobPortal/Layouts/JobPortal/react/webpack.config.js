@@ -36,7 +36,8 @@ module.exports = {
         Partner: './src/Partner/Partner',
         Blog: './src/Blog/Blog',
         Footer: './src/Footer/Footer',
-        owlCarousel: './src/owlCarousel/owlCarousel'
+        owlCarousel: './src/owlCarousel/owlCarousel',
+        FilePicker: './src/FilePicker'
     },
     output: {
         path: path.resolve(__dirname, './public'),
